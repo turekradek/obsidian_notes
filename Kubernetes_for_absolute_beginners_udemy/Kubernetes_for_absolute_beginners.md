@@ -256,28 +256,747 @@ yaml
 
 
 # Section 6: kubernetes concepts - pods , replicasets, deployments 
+22.
 
+> Pods with YAML
 
-
-
----
-# Section 7: Netowrking in Kubernetes
-
-### 22 Pods with YAML
-```template_of_yaml_in_kubernetes
+```basic_yaml_config
 apiVersion:
 kind:
 metadata:
-
-
-
 
 spec:
 ```
 
 
+```basic_yaml_config2
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		 app: myapp
+		 type: front-end
+
+spec:
+	containers:
+		- name: nginx-container
+		  image: nginx
+```
+
+if file is created use command
+> kubectl create -f pod-definition.yml
+
+### 23 
+to use kubect i need docker [[docker]]  file with problems if you use wsl linux 
+## [kubectl instalation](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+problems with kubectl instalation
+f you see a message similar to the following, kubectl is not configured correctly or is not able to connect to a Kubernetes cluster.
+```
+The connection to the server <server-name:port> was refused - did you specify the right host or port?
+```
+[minikube instalation](https://minikube.sigs.k8s.io/docs/start/)
+
+Exiting due to GUEST_DRIVER_MISMATCH: The existing "minikube" cluster was created using the "docker" driver, which is incompatible with requested "none" driver.
+💡  Suggestion: Delete the existing 'minikube' cluster using: 'minikube delete', or start the existing 'minikube' cluster using: 'minikube start --driver=docker'
+
+
+## Exercise 7 
+
+PODs - 1
+
+**Introduction:** Let us start simple! Given a **pod-definition.yml** file. We are only getting started with it. I have added two root level properties - apiVersion and kind.
+
+**Instruction:** Add the missing two properties - **metadata** and **spec**
+apiVersion:
+kind:
+metadata:
+spec:
+
+## Exercise 8
+PODs - 2
+
+**Introduction:** Let us now populate values for each property. Start with **apiVersion**. 
+
+**Instruction:** Update value of **apiVersion** to **v1**. Remember to add a space between colon (:) and the value (v1)
+apiVersion: v1
+kind:
+metadata:
+spec:
+
+## Exercise 9
+PODs - 3
+
+**Instruction:** Update value of **kind** to **Pod**.
+apiVersion: v1
+kind: Pod
+metadata:
+spec:
+
+## Exercise 10
+
+PODs - 4
+
+**Introduction:** Let us now get to the metadata section. 
+
+**Instruction:** Add a property "**name**" under metadata with value "**myapp-pod**". Remember to add a space before 'name' to make it a child of metadata
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+spec:
+
+## Exercise 11
+**Introduction:** Let us add some labels to our Pod 
+
+**Instruction:** Add a property "**labels**" under metadata with a child property "**app**" with a value "**myapp**". Remember to have equal number of spaces before "name" and "labels" so they are siblings
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+spec:
+
+## Exercise 12
+**Introduction:** We now need to provide information regarding the docker image we plan to use. 
+
+**Instruction:** Add a property **containers** under **spec** section. Do not add anything under it yet.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+spec:
+  containers:
+## Exercise 13
+**Instruction:** Containers is an array/list. So create the **first** **element/item** in the array/list and add the following properties to it: **name** - **nginx** and **image** - **nginx**
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: myapp
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+
+## Exercise 14
+**Introduction:** Perfect! You have successfully created a Kubernetes-Definition file. Let us try it one more time, this time all on your own! 
+
+**Instruction:** Create a Kubernetes Pod definition file using values below: 
+
+-   **Name:** postgres 
+-   **Labels:** tier => db-tier
+-   **Container name:** postgres
+-   **Image:** postgres
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres
+  labels:
+    tier: db-tier
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+
+## Exercise 15
+
+**Introduction:** Postgres [Docker image](https://hub.docker.com/_/postgres/) requires an environment variable to be set for password.  
+
+**Instruction:** Set an environment variable for the docker container. **POSTGRES_PASSWORD** with a value **mysecretpassword**. I know we haven't discussed this in the lecture, but it is easy. To pass in an environment variable add a new property '**env**' to the container object. It is a sibling of image and name. **env** is an array/list. So add a new item under it. The item will have properties **name** and **value**. **name** should be the name of the environment variable - **POSTGRES_PASSWORD.** And **value** should be the password - **mysecretpassword**
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres
+  labels:
+    tier: db-tier
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+      env:
+        - name: POSTGRES_PASSWORD
+          value: mysecretpassword
+
+# 25
+
+Hands-On Labs - Familiarise with the lab environment
+
+#### Let's get real!
+
+how many nodes are in cluster , version
+> kubectl get nodes
+
+kubernetes operating system check
+>kubectl describe nodes
+
+> kubectl describe pods 
+
+>kubectl delete pod webapp
+
+
+We have real labs for you that will help you get some real hands-on experience. Checkout the previous lecture to learn how to access the KodeKloud labs right in your browser!
+
+  
+
+First we start with a basic lab to get you familiarized with the lab environment:
+[https://uklabs.kodekloud.com/topic/labs-familiarize-with-lab-environment-2/](https://uklabs.kodekloud.com/topic/labs-familiarize-with-lab-environment-2/)
+
+Hands-On Labs
+
+Access the hands-on labs here:
+
+[https://uklabs.kodekloud.com/topic/labs-pods-with-yaml-2/](https://uklabs.kodekloud.com/topic/labs-pods-with-yaml-2/)
+
+Create a new pod with the nginx image
+> kubectl run nginx --image=nginx 
+
+what is the image of pod 
+> kubectl describe pod nazwa
+
+which nodes are hthese pods placed on
+> kubectl get pods -o wide 
+
+how many containers are part of the pod webapp
+> kubestl get pods 
+> COntainers :
+
+What images are used in the new webapp
+> kubectl describe pod webapp
+
+Create a new pod with the name redis and with the image redis123
+>kubectl run redis --image=redis123
+>kubectl run redis --image=redis123 --dry-run=client -o yaml > redis.yaml
+>kubectl create -f redis.yaml
+
+Change the image on this pod
+> kubectl edit pod 
+> cat redis.yaml
+> kubectl apply -f redis.yaml
 
 ---
+## - 28 replication cotrollers 
+
+- [ ] replication controller oldest
+- [ ] replica set newest 
+if you want to create replication controller i kind dont use pod 
+```replication
+apiVersion: v1
+kind: ReplicationCotroller
+metadata:
+  name: myapp-rc
+  labels:
+    app: myapp
+    type: front-end
+spec: # to replicate pod use template section 
+  template: # in template section copy pod.yaml file excluding ~~api and kind
+    metadata:
+      name: myapp=pod
+      labels:
+        app: myapp
+        type: front-pod
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  replicas: 3
+  
+```
+
+~~apiVersion: v1
+kind: Pod~~
+metadata:
+  name: postgres
+  labels:
+    tier: db-tier
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+      env:
+        - name: POSTGRES_PASSWORD
+          value: mysecretpassword
+
+To create replication controller
+>kubectl create -f rc-definition.yaml
+>kubectl get replicationcontroller
+
+## - 28 replicaset 
+
+```replication
+apiVersion: v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    app: myapp
+    type: front-end
+spec: # to replicate pod use template section 
+  template: # in template section copy pod.yml file excluding ~~api and kind
+    metadata:
+      name: myapp=pod
+      labels:
+        app: myapp
+        type: front-pod
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+      
+  # selector is a different part of file then replicacontroller
+```
+to create replicaset
+>kubectl create -f replicaset-definition.yml
+>kubectl get replicaset
+
+replicaset monitor process and if some pod are deleted replicaset create new one
+selector:
+ matchLabels:
+  type: front-end 
+is the part of file to monitor app , replicaset know which pods monitor
+how to scale repliaset
+- first change replicas in file replicas: 3 - > replicas 6
+- kubectl replace -f replicaset-definition.yml 
+- kubectl scale --replias=6 -f replicaset-definition.yml
+- kubectl scale --replicas=6 replicaset myapp=replicaset
+
+ ## commands 
+ create replicaset 
+ > kubectl create -f replicaset-definition.yml   
+ 
+ -f parametr   file to create replicaset
+ 
+ to get created replicaset
+ >kubectl get replicaset
+ 
+ delete all replicaset myapp **alse deletes all underlying PODs**
+ > kubectl delete replicaset myapp-replicaset 
+
+replace or update replicaset 
+>kubectl replace -f replicaset-definition.yml
+
+scale replica set simply from the command line without having to modify
+>kubectl scale--replicas=6 -f replicaset-defini
+
+
+## 29 demo replicasets
+[[replicasets.yml]]
+ commands to set replicaset
+ 
+ > kubectl create -f replicaset.yaml
+ > kubectl get replicaset
+
+ if is only one replicaset don't need write name of file to get replicaset
+ kubectl ge tpods
+ myapp-replicaset- uniqe
+ myapp-replicaset- uniqe
+ myapp-replicaset- uniqe
+**if delete pod **
+kubectl delete pod myapp-replicaset-uniqe 
+still are 3 pods beceause replicaset created third
+
+# INSTALATION KUBERNETES ON WINDOWS WSL
+[LINK](https://kubernetes.io/blog/2020/05/21/wsl-docker-kubernetes-on-the-windows-desktop/)
+ ```kubectl_run
+run docker on windows
+
+
+docker version
+
+kubectl version
+
+
+# Download the latest version of KinD
+curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-linux-amd64
+# Make the binary executable
+chmod +x ./kind
+# Move the binary to your executable path
+sudo mv ./kind /usr/local/bin/
+
+
+
+# Check if the .kube directory is created > if not, no need to create it
+ls $HOME/.kube
+# Create the cluster and give it a name (optional)
+kind create cluster --name wslkind
+# Check if the .kube has been created and populated with files
+ls $HOME/.kube
+
+https://127.0.0.1:49153/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+
+# Check how many nodes it created
+kubectl get nodes
+# Check the services for the whole cluster
+kubectl get all --all-namespaces
+
+
+# Delete the existing cluster
+kind delete cluster --name wslkind
+
+
+
+# Create a config file for a 3 nodes cluster
+cat << EOF > kind-3nodes.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+  - role: worker
+  - role: worker
+EOF
+
+
+# Create a new cluster with the config file
+kind create cluster --name wslkindmultinodes --config ./kind-3nodes.yaml
+# Check how many nodes it created
+kubectl get nodes
+
+# Check the services for the whole cluster
+kubectl get all --all-namespaces
+
+
+
+# Install the Dashboard application into our cluster
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-rc6/aio/deploy/recommended.yaml
+# Check the resources it created based on the new namespace created
+kubectl get all -n kubernetes-dashboard
+
+
+# Start a kubectl proxy
+kubectl proxy
+# Enter the URL on your browser: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+
+
+# Create a new ServiceAccount
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+EOF
+# Create a ClusterRoleBinding for the ServiceAccount
+kubectl apply -f - <<EOF
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kubernetes-dashboard
+EOF
+
+
+
+
+# Get the Token for the ServiceAccount
+kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
+# Copy the token and copy it into the Dashboard login and press "Sign in"
+
+TOKEN
+eyJhbGciOiJSUzI1NiIsImtpZCI6IlA5emkwbTQ0SHdxd3lYWFJONWhZTVdSZ3VVcUhuOHREMlptaDNYMVhIUjAifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLTdnOHM1Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJiNDI5NzM2Ny03ZTVlLTQ3ZTUtYTEwYS02YmM5YjM3YTllOGMiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.hIX1672d-jW46HzP5BA5VgV4LWhWBvxmZdLaHeBvy8gXZFjcGDU7HX61f_rrjMobP9sxMAbCQu3SAH-aNUvekW3RmIA9QKFIBlblCKXPWZ4pnpYFsmAXdv-jPqu4tW18XC4vpp68GC38LKKPwWPhiObD9jLj9WRSg_XzsewTBzAXtnBUuXO-rzH1YLZsgWNBPf-Lol6VnY-3dYmIM4_ax48N7LA9aBCTFYTwWUOW3KRSjx4JyTSANLZvQG5UbIDOQ9qlpbSlEErq_v79YSCRhDrYFz2erFfKDALhNACw-7RhR_iPEKBimzbJSo6c4wuEkuJtf9JG9KP929qorKvhCg
+
+```
+
+
+[Kubernetes Dashboard](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=default)
+
+
+```minikube_install
+
+# Download the latest version of Minikube
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+# Make the binary executable
+chmod +x ./minikube
+# Move the binary to your executable path
+sudo mv ./minikube /usr/local/bin/
+```
+
+```create_mnikube
+# Create a minikube one node cluster
+minikube start --driver=none
+```
+
+```
+# Install the conntrack package
+sudo apt install -y conntrack
+```
+
+```
+# Create a minikube one node cluster
+minikube start --driver=none
+# We got a permissions error > try again with sudo
+sudo minikube start --driver=none
+```
+
+```
+minikube: enabling systemD
+# Install the needed packages
+sudo apt install -yqq daemonize dbus-user-session fontconfig
+```
+
+```
+# Create the start-systemd-namespace script
+sudo vi /usr/sbin/start-systemd-namespace
+#!/bin/bash
+
+SYSTEMD_PID=$(ps -ef | grep '/lib/systemd/systemd --system-unit=basic.target$' | grep -v unshare | awk '{print $2}')
+if [ -z "$SYSTEMD_PID" ] || [ "$SYSTEMD_PID" != "1" ]; then
+    export PRE_NAMESPACE_PATH="$PATH"
+    (set -o posix; set) | \
+        grep -v "^BASH" | \
+        grep -v "^DIRSTACK=" | \
+        grep -v "^EUID=" | \
+        grep -v "^GROUPS=" | \
+        grep -v "^HOME=" | \
+        grep -v "^HOSTNAME=" | \
+        grep -v "^HOSTTYPE=" | \
+        grep -v "^IFS='.*"$'\n'"'" | \
+        grep -v "^LANG=" | \
+        grep -v "^LOGNAME=" | \
+        grep -v "^MACHTYPE=" | \
+        grep -v "^NAME=" | \
+        grep -v "^OPTERR=" | \
+        grep -v "^OPTIND=" | \
+        grep -v "^OSTYPE=" | \
+        grep -v "^PIPESTATUS=" | \
+        grep -v "^POSIXLY_CORRECT=" | \
+        grep -v "^PPID=" | \
+        grep -v "^PS1=" | \
+        grep -v "^PS4=" | \
+        grep -v "^SHELL=" | \
+        grep -v "^SHELLOPTS=" | \
+        grep -v "^SHLVL=" | \
+        grep -v "^SYSTEMD_PID=" | \
+        grep -v "^UID=" | \
+        grep -v "^USER=" | \
+        grep -v "^_=" | \
+        cat - > "$HOME/.systemd-env"
+    echo "PATH='$PATH'" >> "$HOME/.systemd-env"
+    exec sudo /usr/sbin/enter-systemd-namespace "$BASH_EXECUTION_STRING"
+fi
+if [ -n "$PRE_NAMESPACE_PATH" ]; then
+    export PATH="$PRE_NAMESPACE_PATH"
+fi
+```
+
+
+
+```
+# Create the enter-systemd-namespace
+sudo vi /usr/sbin/enter-systemd-namespace
+#!/bin/bash
+
+if [ "$UID" != 0 ]; then
+    echo "You need to run $0 through sudo"
+    exit 1
+fi
+
+SYSTEMD_PID="$(ps -ef | grep '/lib/systemd/systemd --system-unit=basic.target$' | grep -v unshare | awk '{print $2}')"
+if [ -z "$SYSTEMD_PID" ]; then
+    /usr/sbin/daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target
+    while [ -z "$SYSTEMD_PID" ]; do
+        SYSTEMD_PID="$(ps -ef | grep '/lib/systemd/systemd --system-unit=basic.target$' | grep -v unshare | awk '{print $2}')"
+    done
+fi
+
+if [ -n "$SYSTEMD_PID" ] && [ "$SYSTEMD_PID" != "1" ]; then
+    if [ -n "$1" ] && [ "$1" != "bash --login" ] && [ "$1" != "/bin/bash --login" ]; then
+        exec /usr/bin/nsenter -t "$SYSTEMD_PID" -a \
+            /usr/bin/sudo -H -u "$SUDO_USER" \
+            /bin/bash -c 'set -a; source "$HOME/.systemd-env"; set +a; exec bash -c '"$(printf "%q" "$@")"
+    else
+        exec /usr/bin/nsenter -t "$SYSTEMD_PID" -a \
+            /bin/login -p -f "$SUDO_USER" \
+            $(/bin/cat "$HOME/.systemd-env" | grep -v "^PATH=")
+    fi
+    echo "Existential crisis"
+fi
+```
+
+
+```
+# Edit the permissions of the enter-systemd-namespace script
+sudo chmod +x /usr/sbin/enter-systemd-namespace
+# Edit the bash.bashrc file
+sudo sed -i 2a"# Start or enter a PID namespace in WSL2\nsource /usr/sbin/start-systemd-namespace\n" /etc/bash.bashrc
+```
+## Minikube: the first cluste
+
+ 
+```
+# Check if the KUBECONFIG is not set
+echo $KUBECONFIG
+# Check if the .kube directory is created > if not, no need to create it
+ls $HOME/.kube
+# Check if the .minikube directory is created > if yes, delete it
+ls $HOME/.minikube
+# Create the cluster with sudo
+sudo minikube start --driver=none
+```
+> In order to be able to use `kubectl` with our user, and not `sudo`, Minikube recommends running the `chown` command
+
+```bash
+# Change the owner of the .kube and .minikube directories
+sudo chown -R $USER $HOME/.kube $HOME/.minikube
+# Check the access and if the cluster is running
+kubectl cluster-info
+# Check the resources created
+kubectl get all --all-namespaces
+```
+
+```localhost
+https://127.0.0.1:49153/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+```
+## Minikube: can I see a nice dashboard?
+ 
+
+```bash
+# Enable the Dashboard service
+sudo minikube dashboard
+# Access the Dashboard from a browser on Windows side
+
+```
+[Kubernetes Dashboard](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=default)
+
+```bash
+# Get all the services from the dashboard namespace
+kubectl get all --namespace kubernetes-dashboard
+```
+
+```bash
+# Edit the Dashoard service
+kubectl edit service/kubernetes-dashboard --namespace kubernetes-dashboard
+# Go to the very end and remove the last 2 lines
+status:
+  loadBalancer: {}
+# Change the type from ClusterIO to LoadBalancer
+  type: LoadBalancer
+# Save the file
+```
+
+```bash
+# Get all the services from the dashboard namespace
+kubectl get all --namespace kubernetes-dashboard
+# Access the Dashboard from a browser on Windows side with the URL: localhost:<port exposed>
+```
+
+```bash
+# Get all the services from the dashboard namespace
+kubectl get all --namespace kubernetes-dashboard
+# Access the Dashboard from a browser on Windows side with the URL: localhost:<port exposed>
+```
+
+
+---
+
+NAME                                TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)         AGE
+service/dashboard-metrics-scraper   ClusterIP      10.96.60.199   <none>        8000/TCP        27m
+service/kubernetes-dashboard        LoadBalancer   10.96.0.227    <pending>     443: **32238** /TCP   27m
+
+NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/dashboard-metrics-scraper   1/1     1            1           27m
+deployment.apps/kubernetes-dashboard        1/1     1            1           27m
+
+NAME                                                   DESIRED   CURRENT   READY   AGE
+replicaset.apps/dashboard-metrics-scraper-7b8b58dc8b   1         1         1       27m
+replicaset.apps/kubernetes-dashboard-5f5f847d57        1         1         1       27m
+
+localhost:32238 
+
+
+---
+
+
+
+```
+```COMMANDS
+  235  docker version
+  236  kubectl version
+  237  curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-linux-amd64
+  238  chmod +x ./kind
+  239  sudo mv ./kind /usr/local/bin/
+  240  echo $KUBECONFIG
+  241  ls $HOME/.kube
+  242  kind create cluster --name wslkind
+  243  ls $HOME/.kube
+  244  kubernetes cluster-info
+  245  kubectl cluster-info
+  
+```
+
+ kubectl cluster-info
+ > Kubernetes control plane is running at https://127.0.0.1:49153
+ 
+ ```counting_1_2_3
+# Check how many nodes it created
+kubectl get nodes
+# Check the services for the whole cluster
+kubectl get all --all-namespaces
+```
+## KinD: can I see a nice dashboard?[](https://kubernetes.io/blog/2020/05/21/wsl-docker-kubernetes-on-the-windows-desktop/#kind-can-i-see-a-nice-dashboard)
+
+Working on the command line is always good and very insightful. However, when dealing with Kubernetes we might want, at some point, to have a visual overview.
+
+For that, the [Kubernetes Dashboard](https://github.com/kubernetes/dashboard) project has been created. The installation and first connection test is quite fast, so let's do it:
+
+```bash
+# Install the Dashboard application into our cluster
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-rc6/aio/deploy/recommended.yaml
+# Check the resources it created based on the new namespace created
+kubectl get all -n kubernetes-dashboard
+```
+As it created a service with a ClusterIP (read: internal network address), we cannot reach it if we type the URL in our Windows browser:
+That's because 
+we need to create a temporary proxy:
+```temporary_proxy
+# Start a kubectl proxy
+kubectl proxy
+# Enter the URL on your browser: http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+```
+
+```dashboards_kubernetes
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=default
+```
+
+> kubectl proxy
+
+
+## my token
+```token
+eyJhbGciOiJSUzI1NiIsImtpZCI6ImdXUVpRWFYtT0hzR2ZJOHZZUGNkM1o3a180OWtHZ1ZsZ244Y3BNUVhSd1UifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXBjOTU5Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI2NjdlYzllZC0xOTNmLTRlMTUtYWNlYy03YzMzZDdlODJhNjciLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.K4WBHx54eNeswfRfmPXfm3SOHrTy2grZ_qrygKE1hM4HFTtsY5saKTeAiH6jpfkZWjFOLUNbybY6ieS6WbPvp2lPatu923e6gc5rVsfx9ZsuM-DbdwcbLvLPqjU53tTZXxQllYVBkJ_a4gt0THyozvtAV0FC9Zqo04IPazLsFguK9YXWoJDannDHEb3wQ5aqGjglrRxVXhnyjLsmO0XZl-r9q9erBo9QG-UrAghwZY9P9ze2elFIN9ACkWsmcJDSOlrzN9555Og2HndaO5XD8gunuitGj-2Vlup7lCnhFnaex8ufMkA0e3KlkSM-tmzkP5lkIAE9tb2RPITF8mfmhA
+```
+
+
+---
+
+ 
+# Section 7: Netowrking in Kubernetes
+
+
+
+---
+
+
+
 # Section 8: Services
 [[Sec_8 Services]]
 
