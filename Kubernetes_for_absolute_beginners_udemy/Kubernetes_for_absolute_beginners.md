@@ -753,6 +753,7 @@ minikube: enabling systemD
 sudo apt install -yqq daemonize dbus-user-session fontconfig
 ```
 
+> NIE SPRAWDZONE I POWODOWAŁO PROBLEMY W JEDNYM UBUNTU
 ```
 # Create the start-systemd-namespace script
 sudo vi /usr/sbin/start-systemd-namespace
@@ -798,7 +799,8 @@ if [ -n "$PRE_NAMESPACE_PATH" ]; then
 fi
 ```
 
-
+> NIE SPRAWDZONE I POWODOWAŁO PROBLEMY W JEDNYM UBUNTU
+> TO TEZ
 
 ```
 # Create the enter-systemd-namespace
