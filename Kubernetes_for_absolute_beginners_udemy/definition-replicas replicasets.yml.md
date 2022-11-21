@@ -18,5 +18,5 @@ spec:
 	spec:
 	  containers:
 	    - name: nginx
-	      imageL nginx 
+	      image: nginx 
 ```

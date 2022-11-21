@@ -10,8 +10,30 @@ Documentation: [Docker Documentation | Docker Documentation](https://docs.docker
  sudo apt install docker.io
 
 ---
+## Dockerfile
+```dockerfile
+FROM python:3.8-slim-buster
+
+WORKDIR /app
+
+
+COPY requirements.txt requirements.txt
+RUN  pip3 install -r requirements.txt
+
+COPY . .
+
+ENV FLASK_APP=szachy.py
+ENV FLASK_ENV=development
+
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+
+```
 
 ## Build Images
+docker build --file Dockerfile .
+
+## Dockerhub
+
 
 
 ---
