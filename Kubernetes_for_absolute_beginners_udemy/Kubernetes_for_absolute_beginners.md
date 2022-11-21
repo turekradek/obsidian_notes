@@ -1,3 +1,17 @@
+spis tresci
+1. section 1 
+2. section 2
+3. section 3
+4. section 4
+5. section 5 [[Sec_5 Yaml  json xml]]
+6. section 6 [[Sec_6 Kubernetes concepts - pods, replicaSets, deployments]]
+7. section 7 [[Sec_7 Networking in Kubernetes]]
+8. section 8 [[Sec_8 Services]]
+9. section 9 [[Sec_9 Microservices Architecture]]
+10. section 10 [[Sec_10 Kubernetes o Cloud]]
+11. section 11 [[Sec_11 Conclusion]]
+12. section 12 [[Sec_12 Appendix - setup multi node cluster using kubeadm]]
+
 # ACCES THE LABS
 Accessing the Labs
 
@@ -137,7 +151,7 @@ kubectl run nginx --image=nginx
 [List All Container Images Running in a Cluster]([List All Container Images Running in a Cluster | Kubernetes](https://kubernetes.io/docs/tasks/access-application-cluster/list-all-running-container-images/))
 [Pods Deployments]([Deployments | Kubernetes](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/))
 
-# section 5 : YAML introduction
+# section 5 : YAML introduction [[Sec_5 Yaml  json xml]]
 configuration files xml , json yaml
 xml
 ```xml
@@ -986,7 +1000,41 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 ```token
 eyJhbGciOiJSUzI1NiIsImtpZCI6ImdXUVpRWFYtT0hzR2ZJOHZZUGNkM1o3a180OWtHZ1ZsZ244Y3BNUVhSd1UifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXBjOTU5Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI2NjdlYzllZC0xOTNmLTRlMTUtYWNlYy03YzMzZDdlODJhNjciLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZXJuZXRlcy1kYXNoYm9hcmQ6YWRtaW4tdXNlciJ9.K4WBHx54eNeswfRfmPXfm3SOHrTy2grZ_qrygKE1hM4HFTtsY5saKTeAiH6jpfkZWjFOLUNbybY6ieS6WbPvp2lPatu923e6gc5rVsfx9ZsuM-DbdwcbLvLPqjU53tTZXxQllYVBkJ_a4gt0THyozvtAV0FC9Zqo04IPazLsFguK9YXWoJDannDHEb3wQ5aqGjglrRxVXhnyjLsmO0XZl-r9q9erBo9QG-UrAghwZY9P9ze2elFIN9ACkWsmcJDSOlrzN9555Og2HndaO5XD8gunuitGj-2Vlup7lCnhFnaex8ufMkA0e3KlkSM-tmzkP5lkIAE9tb2RPITF8mfmhA
 ```
+## 32 DEPLOYMENT
 
+```defiition_file
+apiVersion: apps/v1
+kind: RaplicaSet
+metadata:
+  name: myapp-deployment
+  labels: # all matchlabels or labels should by thesome
+    app: myapp
+    type: fornt-end
+spec:
+	template:
+		metadata:
+			name: myapp-pod
+			labels:
+				app: myapp
+				type: fornt-end
+		spec:
+			containers:
+			- name: nginx-container
+			  image: nginx
+replicas: 3
+selector: 
+	matchLabels:
+		type: front-end
+```
+> kubectl create -f deployment-definition.yml
+< komentarz nie widoczny >
+> kubectl get deployments 
+**deployment create automaticly replicaset and rs automatically create pods**
+kubectl get all  - shows all of objects
+
+## 33 demo deployments - create deplyment
+-[ ]  new folder
+-[ ] deployment.yaml
 
 ---
 

@@ -1,3 +1,3 @@
-[kubectl commands]([Kubectl Reference Docs (kubernetes.io)](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#config))
+[[kubernetes]]
 
 [[Kubernetes_for_absolute_beginners]]
