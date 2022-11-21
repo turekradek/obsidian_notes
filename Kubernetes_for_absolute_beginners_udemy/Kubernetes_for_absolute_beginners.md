@@ -606,15 +606,18 @@ scale replica set simply from the command line without having to modify
 kubectl delete pod myapp-replicaset-uniqe 
 still are 3 pods beceause replicaset created third
 
+
+---
+---
 # INSTALATION KUBERNETES ON WINDOWS WSL
 [LINK](https://kubernetes.io/blog/2020/05/21/wsl-docker-kubernetes-on-the-windows-desktop/)
  ```kubectl_run
 run docker on windows
 
 
-docker version
+- [ ] docker version
 
-kubectl version
+-[ ] kubectl version
 
 
 # Download the latest version of KinD
@@ -624,7 +627,7 @@ chmod +x ./kind
 # Move the binary to your executable path
 sudo mv ./kind /usr/local/bin/
 
-
+> minikube start 
 
 # Check if the .kube directory is created > if not, no need to create it
 ls $HOME/.kube
@@ -632,7 +635,7 @@ ls $HOME/.kube
 kind create cluster --name wslkind
 # Check if the .kube has been created and populated with files
 ls $HOME/.kube
-
+> run docker image wslkind 
 https://127.0.0.1:49153/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 
