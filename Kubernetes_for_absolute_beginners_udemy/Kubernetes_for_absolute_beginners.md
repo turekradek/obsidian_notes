@@ -620,15 +620,18 @@ scale replica set simply from the command line without having to modify
 kubectl delete pod myapp-replicaset-uniqe 
 still are 3 pods beceause replicaset created third
 
+
+---
+---
 # INSTALATION KUBERNETES ON WINDOWS WSL
 [LINK](https://kubernetes.io/blog/2020/05/21/wsl-docker-kubernetes-on-the-windows-desktop/)
  ```kubectl_run
 run docker on windows
 
 
-docker version
+- [ ] docker version
 
-kubectl version
+-[ ] kubectl version
 
 
 # Download the latest version of KinD
@@ -638,7 +641,7 @@ chmod +x ./kind
 # Move the binary to your executable path
 sudo mv ./kind /usr/local/bin/
 
-
+> minikube start 
 
 # Check if the .kube directory is created > if not, no need to create it
 ls $HOME/.kube
@@ -646,7 +649,7 @@ ls $HOME/.kube
 kind create cluster --name wslkind
 # Check if the .kube has been created and populated with files
 ls $HOME/.kube
-
+> run docker image wslkind 
 https://127.0.0.1:49153/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
 
@@ -924,17 +927,24 @@ kubectl get all --namespace kubernetes-dashboard
 
 ---
 
-NAME                                TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)         AGE
-service/dashboard-metrics-scraper   ClusterIP      10.96.60.199   <none>        8000/TCP        27m
-service/kubernetes-dashboard        LoadBalancer   10.96.0.227    <pending>     443: **32238** /TCP   27m
+|NAME                      |          TYPE    |       CLUSTER-IP  |   EXTERNAL-IP |  PORT(S)     |    AGE|
+|--|--|--|--|--|--|
+|service/dashboard-metrics-scraper |  ClusterIP    |  10.96.60.199 | none |        8000/TCP       | 27m|
+|service/kubernetes-dashboard        |LoadBalancer   |10.96.0.227   |pending|   443: **32238** /TCP |  27m|
 
-NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/dashboard-metrics-scraper   1/1     1            1           27m
-deployment.apps/kubernetes-dashboard        1/1     1            1           27m
 
-NAME                                                   DESIRED   CURRENT   READY   AGE
-replicaset.apps/dashboard-metrics-scraper-7b8b58dc8b   1         1         1       27m
-replicaset.apps/kubernetes-dashboard-5f5f847d57        1         1         1       27m
+|NAME                              |          READY  | UP-TO-DATE  | AVAILABLE |  AGE|
+|--|--|--|--|--|
+|deployment.apps/dashboard-metrics-scraper  | 1/1   |  1  |          1    |       27m|
+|deployment.apps/kubernetes-dashboard     |   1/1  |   1    |        1     |      27m|
+
+
+
+|NAME                                                  | DESIRED |  CURRENT  | READY |  AGE|
+|--|--|--|--|--|
+|replicaset.apps/dashboard-metrics-scraper-7b8b58dc8b   |1        | 1     |    1  |     27m|
+|replicaset.apps/kubernetes-dashboard-5f5f847d57       | 1    |     1    |     1    |   27m|
+
 
 localhost:32238 
 
@@ -943,7 +953,7 @@ localhost:32238
 
 
 
-```
+
 ```COMMANDS
   235  docker version
   236  kubectl version
@@ -1002,6 +1012,7 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6ImdXUVpRWFYtT0hzR2ZJOHZZUGNkM1o3a180OWtHZ1ZsZ244Y3BN
 ```
 ## 32 DEPLOYMENT
 
+<<<<<<< HEAD
 ```defiition_file
 apiVersion: apps/v1
 kind: RaplicaSet
@@ -1035,25 +1046,216 @@ kubectl get all  - shows all of objects
 ## 33 demo deployments - create deplyment
 -[ ]  new folder
 -[ ] deployment.yaml
+=======
+## after i have beed returned from sweden 
+> office_21_11
+
+## 34
+exercise only
+
+## 36 deplyments update and rollback
+
+> kubectl create -f deplyment.yaml
+
+> kubectl rollout status deplyment.apps/myapp-deplyment 
+
+status successfully rolled out 
+history deployment 
+> kubectl rollout history deplyment.apps/myapp-deplyment 
+
+
+Let us try that. Upgrade the application by setting the image on the deployment to kodekloud/webapp-color:v2
+
+Do not delete and re-create the deployment. Only set the new image name for the existing deployment.
+
+>  kubectl edit deployment ..
+> kubectl rollout undo deployment....
+
+
+- [ ] check box 
+
+~~skreslenie~~
+
+**pogrubienie**
+---
+# Sec_7 Networking in Kubernetes 39
+
+- [ ] ip adres to access to kubernetes cluster 192.168.1.2
+- [ ] ip addres sis assigned to a pod  10.244.0.2
+- [ ] after created container is created to network 10.244.0.0 
+- [ ] after that all pods are created with those addresses 10.244.0.3  4  2 
+
+> multiple nodes
+
+| cluster | ip address | web ip address | pods ip address |
+|-------|--|--|---|
+|192.168.1.2       | |    |192.169.1.3                    | 
+| 10.244.0.0    |         |        |     10.244.0.0       |
+|10.244.0.2|10.244.0.3    | 10.244.0.2    | 10.244.0.3    |
+|    pod        |  pod    |     pod       |     pod       |
+
+
+> if the same cluster conflict 10.244.0.0
+
+routing between nodes 
+
+--- 
+# sec 8 services node port 
+connect aplications together and with users 
+
+laptop 192.168.2.10 > node (192.168.1.2) > node web (10.244.0.0) > pod (10.244.0.2)
+
+- [ ] ssh curl http://10.244.0.2   only inside 
+- [ ] kubernetes service laptop > curl http://192.168.1.2:30008 < node 30008 > service > pod and web 
+> sevice is like pod object use to connect web and pod 
+
+## services types
+- [ ] nodeport         on the wall of node  30008 (30000-32767)> service > 80 (port) > 80 (target port) > pod 
+
+
+      ```
+        apiVerion: v1
+        kind: Sevice
+        metadata:
+            name: myapp-service
+        spec:
+            type: NodePort
+            ports:
+              - targetPort: 80   # port on pod
+                port: 80         # port on service 
+                nodePort: 30008  # on the wall of node 
+            **selector: # this part is from pod-definition.yml from labels:
+                app: myapp
+                type: front-end** 
+               
+      ```
+
+>pod-definition.yml
+
+> apiVersion: v1
+```
+ kind: Pod
+ metadata:
+   name: myapp-pod
+   labels:
+     app: myapp
+     type: front-end
+ spec:
+   containers:
+   - name: nginx-container
+     image: ngoinx
+```
+> kubectl create -f service-definition.yml 
+> kubectl get services 
+
+
+| NAME | TYPE | CLUSTER-IP | EXTERNAL-IP | PORT(S) | AGE|
+|----|---|----|----|---|----|
+|myapp-service| NodePOrt|  10.106.127.123|  none |  80:30008/TCP | 5m|
+
+> CURL HTTP://192.1.2:30008
+
+|              |      |        USER   |      |     |       |
+|-------       |------|------------|---------|---- |-------  |
+|CURL HTTP://192.168.1.2:30008 |      | CURL HTTP://192.168.1.2:30008 | |  CURL HTTP://192.168.1.4:30008  | |
+|   NODE 1     |      |  NODE 2              |     |    NODE 3         | |
+|192.168.1.2   | 30008|192.168.1.3           |30008|    192.168.1.4    |30008 |
+|              |      |        SERVICE       |     |                   |  |
+|  10.244.0.3  |      |       10.244.0.2     |     |       10.244.0.4  |  |
+|   POD 1      |      |        POD 2         |     |         POD  3    |  |
+
+
+
+
+
+- [ ] clusterip       inside of node
+- [ ] loadBalancer  1 point outside the wall of node and 3 points on the wall of node 
+
+
+## 41  Demo - Service
+
+check service after apply 
+> kubectl get svc
+
+> minikube service myapp-service --url
+ - [ ] go to web browser 
+
+## 42 Services - ClusterIP
+
+| front-end | 10.244.0.3 |10.244.0.2 | 10.244.0.4|
+| -- | -- | -- | -- |
+| |  back-end| | 
+| back-end|10.244.0.3|10.244.0.5|10.244.0.8|
+|   | redis |||
+| redis |10.244.0.4|10.244.0.7|10.244.0.10|
+
+```service_def_clusterIP
+apiVersion: v1
+kind: Service
+metadata:
+  name: back-end
+spec:
+  type: ClusterIP
+  ports:
+    - targetPort: 80
+      port: 80
+  selector:
+    app: myapp
+    type: back-end
+```
+
+
+## 43 Service ClusterIP
+
+ ![[kubernetes_service_load_balancer.png]]
+
+```load_balancer
+apiVersion: v1
+kind: Service
+metadata:
+	name: myapp-service
+spec:
+	type: LoadBalancer
+	ports:
+	  - targetPort: 80
+	    port: 80
+	    nodePort: 30008
+```
+
+## Labs 30 .. 37 
+
+```end_file
+apiVersion: v1
+kind: Service
+metadata:
+  name: image-processing
+  labels:
+    app: myapp
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    tier: backend
+```
+
+| pod def | replicaset | deployment | services|
+|-|-|-|-|
+|[[definition-pod nginx.yml]]|[[definition-replicas replicasets.yml]]|[[definition-deployment.yaml]]|nodePort ClusterIP LoadBalancer
+
+| nodePort | ClusterIP |  LoadBalancer |
+|-|-|-|
+|[[def_nodePort]] | [[def_ClusterIP]] | [[def_loadBalancer]]|
+
+
+
+
+
+
 
 ---
-
- 
-# Section 7: Netowrking in Kubernetes
-
-
-
----
-
-
-
-# Section 8: Services
-[[Sec_8 Services]]
-
-
-
----
-# Section 9: MIcroservices Architecture
+# Section 9: Microservices Architecture
 
 [[Sec_9 Microservices Architecture]]
 
