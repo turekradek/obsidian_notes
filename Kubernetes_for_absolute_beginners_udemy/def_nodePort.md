@@ -1,6 +1,6 @@
 ```NodePort
         apiVerion: v1
-        kind: Sevice
+        kind: Service
         metadata:
             name: myapp-service
         spec:

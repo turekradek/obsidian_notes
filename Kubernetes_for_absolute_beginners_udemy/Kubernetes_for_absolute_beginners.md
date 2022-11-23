@@ -1249,15 +1249,54 @@ spec:
 |[[def_nodePort]] | [[def_ClusterIP]] | [[def_loadBalancer]]|
 
 
-
-
-
-
-
 ---
 # Section 9: Microservices Architecture
 
 [[Sec_9 Microservices Architecture]]
+how to run microservices
+docke run -d --name=redis  redis
+docke run -d --name=db postgres:9.4
+docke run -d --name=vote -p 5000:80 --link redis:redis voting-app
+docke run -d --name=result  -p 5001:80 --link db:db result-app
+docke run -d --name=worker --link db:db -- link redis:redis   worker
+
+| voting-app|  | resulg-app|
+|-|-|-|
+|     \ | |     / |
+|in-memory DB | |db |
+|     \ | |     / |
+| | worker| |
+
+> how to  deploy
+- [ ] deploy containers
+- [ ] enable connectivity 
+- [ ] external access
+
+### steps
+1.  deploy pods
+2.  create services (ClusterIP)
+	1. redis
+	2. db 
+3. Create Services (NodePort)
+	1. voting-app
+	2. result-app
+	
+```kokekloud_47
+kodekloudhub/example-voting-app
+forged from dockersamples/example-voting-app
+
+kodekloud/examplevotingapp_vote:v1                    kodekloud/examplevotingapp_result:v1
+redis   postrgesql
+    worker  kodekloud/examplevotingapp_worker:v1
+
+```
+
+### 48 DEMO DEPLOING MICROSERVICES APPLICATION ON KUBERNETES 
+
+ check url
+ > minikube service voting-service --url
+ 
+ ## 49 demo deploying microservices application on kubernetes with deplyments 
 
 ---
 # Section 10: Kubernetes on Cloud
