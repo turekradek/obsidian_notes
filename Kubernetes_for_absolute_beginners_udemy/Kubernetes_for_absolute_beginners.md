@@ -1295,14 +1295,46 @@ redis   postrgesql
 
  check url
  > minikube service voting-service --url
+
+### 49 demo deploying microservices application on kubernetes with deplyments 
+
+### 50 Article: demo lectiure manifest files
+
+ Demo lecture manifest files are available in the below repository:
+ [https://github.com/kodekloudhub/example-voting-app-kubernetes](https://github.com/kodekloudhub/example-voting-app-kubernetes)
  
- ## 49 demo deploying microservices application on kubernetes with deplyments 
 
 ---
 # Section 10: Kubernetes on Cloud
 [[Sec_10 Kubernetes o Cloud]]
 
+### 51 Kubernetes on Cloud  Introduction
+### 52 Kubernetes on GCP (GKE)
 
+ https://cloud.google.com/free/docs/gcp-free-tier
+ 
+
+### 53 Reference -Google Cloud Platform 
+If you haven't created an account already, you can get FREE 12 Months subscription to Google Cloud Platform. Check it out here:
+
+[https://cloud.google.com/free/](https://cloud.google.com/free/)
+
+Kubernetes on Google Cloud: [https://cloud.google.com/kubernetes-engine/docs/](https://cloud.google.com/kubernetes-engine/docs/)
+
+
+### 54 Kubernetes on AWS (EKS)
+ Pre-Requisite
+- [ ] AWS Account:
+https://aws.amazon.com/free/
+- [ ] Installing Kubectl cli 
+- [ ] EKS Cluster Role
+- [ ] IAM Role for Node Group
+- [ ] VPC
+- [ ] EC2 Key Pair which can be used to SSH to the worker nodes
+- [ ] AWS Basics
+ > https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html
+
+ 
 ---
 # Section 11: Conclusion
 
