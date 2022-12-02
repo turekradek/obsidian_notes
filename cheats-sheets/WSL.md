@@ -11,7 +11,7 @@ Wsl --list
 
 wsl --export <WSL Image Name> <Export file>
 
-wsl –import <Image Name you choose> <Directory to store and run the image> <Directory location of the exported .tar file>
+wsl –-import <Image Name you choose> <Directory to store and run the image> <Directory location of the exported .tar file>
 
 wsl -d <WSL imported image name>
 ```
