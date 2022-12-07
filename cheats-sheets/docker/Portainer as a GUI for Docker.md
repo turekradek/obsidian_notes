@@ -36,3 +36,14 @@ The response should be similar to the below.
 ```
 docker container start portainer
 ```
+
+# debian 
+```
+localhost:9000
+```
+> radek radekradekradek
+
+# ubuntu 22
+localhost:9443
+> turek turekturekturek
+
