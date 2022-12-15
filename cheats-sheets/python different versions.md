@@ -47,3 +47,46 @@ After successful installation remove the downloaded archive to save disk space
 
 cd /opt
 sudo rm -f Python-3.8.12.tgz
+
+## 2nd Method: Install Python 3.8 – Download Archive Manually
+
+- [ ] sudo apt update
+- [ ] sudo apt upgrade
+
+Extract the Python archive, and remember to change the version number if you downloaded a newer one.
+
+- [ ] wget https://www.python.org/ftp/python/3.8.15/Python-3.8.15.tar.xz
+
+- [ ] tar -xf Python-3.8.{version}.tar.xz
+
+Now install the dependencies required to install Python 3.8.
+- [ ] sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev pkg-config make -y
+
+Navigate to the directory.
+
+- [ ] cd Python3.8.{version}/
+
+Now, run the **./configure –enable-optimizations** command.
+- [ ] ./configure --enable-optimizations --enable-shared
+
+Now that you have built and configured the environment, it is time to compile it with the command **make**.
+- [ ] make -j 6
+
+Once you have finished building, install Python binaries as follows:
+- [ ] sudo make altinstall
+
+Next, you need to configure the dynamic linker run-time bindings with the **ldconfig command after the installation**.
+- [ ] sudo ldconfig /opt/Python3.8.{version}
+
+- [ ] sudo ldconfig /opt/Python3.8.15
+
+- [ ] sudo python3.8 --version
+
+Pip should have been installed already, but for those that have issues and need to re-install using the manual method, follow the steps downloading **get-pip.py** using the **wget command.**
+- [ ] wget https://bootstrap.pypa.io/get-pip.py
+
+Next, install the downloaded file.
+- [ ] python3.8 get-pip.py
+
+Once installed, it is a good idea to check for upgrades.
+- [ ] python3.8 -m pip install --upgrade pip
