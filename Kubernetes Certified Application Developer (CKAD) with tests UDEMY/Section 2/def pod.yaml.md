@@ -11,3 +11,5 @@ spec:
 		- name: nginx-contrainer
 		  image: nginx
 ```
+
+#POD
