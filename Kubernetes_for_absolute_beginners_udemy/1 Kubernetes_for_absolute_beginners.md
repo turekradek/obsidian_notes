@@ -1,3 +1,5 @@
+[MINIKUBE ON UBUNTU WSL2]([Getting Minikube on WSL2 Ubuntu working (github.com)](https://gist.github.com/wholroyd/748e09ca0b78897750791172b2abb051))
+[KUBERNETES ON WSL]([WSL+Docker: Kubernetes on the Windows Desktop | Kubernetes](https://kubernetes.io/blog/2020/05/21/wsl-docker-kubernetes-on-the-windows-desktop/))
 `spis tresci
 1. section 1 
 2. section 2
