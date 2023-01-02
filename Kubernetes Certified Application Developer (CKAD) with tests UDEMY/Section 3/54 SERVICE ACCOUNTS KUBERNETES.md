@@ -59,3 +59,9 @@ spec:
 
 > kubectl create token dashboard-sa
 
+kubectl describe serviceaccout dashboard-sa
+
+kubectl describe sa dashboard-sa
+
+kubectl describe secret NAME_OF_TOKEN
+
