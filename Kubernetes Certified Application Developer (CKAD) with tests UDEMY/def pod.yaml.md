@@ -74,3 +74,62 @@ spec:
 				    values:
 				    - Large
 ```
+
+## Multi container
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+		- name: nginx-contrainer
+		  image: nginx
+	ports:
+		- contanerPort: 8080
+	- name: log-agent
+	  image: log-agent
+```
+
+## Readiness Probe
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+		- name: nginx-contrainer
+		  image: nginx
+	ports:
+		- contanerPort: 8080
+	readinessProbe:
+		httpGet:
+			path: /api/ready
+			port: 8080
+```
+
+## Event simulator
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+		- name: nginx-contrainer
+		  image: nginx
+		- name: image-processor
+		  image: some-image-processor
+```
+[[82 Container Logging]]
+
