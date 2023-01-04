@@ -133,3 +133,23 @@ spec:
 ```
 [[82 Container Logging]]
 
+[[89 Labels, Selectors and annotations]]
+
+## Labels
+#labels
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+		- name: nginx-contrainer
+		  image: nginx
+		  ports:
+			  - contanerPort: 8080
+```
+

@@ -1,5 +1,6 @@
 [minikube on wsl2]([WSL+Docker: Kubernetes on the Windows Desktop | Kubernetes](https://kubernetes.io/blog/2020/05/21/wsl-docker-kubernetes-on-the-windows-desktop/))
 
+
 ```bash
 # Delete the existing cluster
 kind delete cluster --name wslkind
