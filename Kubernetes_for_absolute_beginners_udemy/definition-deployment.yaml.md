@@ -1,22 +1,49 @@
+```deployment>yaml
 apiVersion: apps/v1
-kind: Deploymet
+kind: Deployment
 metadata:
-  name: myapp-deployment
-  labels: # all matchlabels or labels should by thesome
-    app: myapp
-    type: fornt-end
+  name: myapp-deployment
+  labels: # all matchlabels or labels should by thesome
+    tier: frontend
+    app: myapp
 spec:
-	template:
-		metadata:
-			name: myapp-pod
-			labels:
-				app: myapp
-				type: fornt-end
-		spec:
-			containers:
-			- name: nginx-container
-			  image: nginx
-replicas: 3
-selector: 
-	matchLabels:
-		type: front-end
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 3
+  template:
+    metadata:
+      name: nginx-2
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+```
+
+[[91 Rolling Updates and Rollbacks in Deployments]]
+
+```deployment>yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels: # all matchlabels or labels should by thesome
+    tier: frontend
+    app: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 3
+  template:
+    metadata:
+      name: nginx-2
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.7.1
+```
