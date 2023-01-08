@@ -1,0 +1,15 @@
+{
+  "promptDelete": true,
+  "livePreview": true,
+  "defaultViewMode": "preview",
+  "legacyEditor": false,
+  "strictLineBreaks": true,
+  "showLineNumber": true,
+  "alwaysUpdateLinks": true,
+  "spellcheck": false,
+  "tabSize": 4,
+  "showUnsupportedFiles": true,
+  "rightToLeft": false,
+  "readableLineLength": false,
+  "showFrontmatter": true
+}

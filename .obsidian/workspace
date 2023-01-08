@@ -1,0 +1,136 @@
+{
+  "main": {
+    "id": "57bd2d50ec39b6a4",
+    "type": "split",
+    "children": [
+      {
+        "id": "4797c7db9452bb1d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Mapr/mapr_notes.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7196a4ec27a1035d",
+    "type": "split",
+    "children": [
+      {
+        "id": "11eddb601bfdcfbe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ff73196e65f1c87",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "22320ff4f075ff94",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#nagłówek",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9856244fc8a29667",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 285.5
+  },
+  "right": {
+    "id": "d15b04899753fd0f",
+    "type": "split",
+    "children": [
+      {
+        "id": "7503b8bf87b07f63",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e5df23e457db807",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Mapr/mapr_notes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3d42a79efe094dd7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Mapr/mapr_notes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a10aeccceba6509c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1b10581708f02a05",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Mapr/mapr_notes.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "4797c7db9452bb1d",
+  "lastOpenFiles": [
+    "cheats-sheets/cloud/provider/civo.md",
+    "Mapr/vault_1.md",
+    "Mapr/Untitled.md"
+  ]
+}
