@@ -11,68 +11,88 @@
             "id": "ad9a6a150fb4af2d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/1000 notes.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
-            "id": "bac67bee8bbb5b64",
+            "id": "8f0249d61de935a5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/10000 notes.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
-            "id": "f1a8e94b9b39eb90",
+            "id": "21d82620531584ee",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/100000 notes.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
-            "id": "0c02784897f44f7a",
+            "id": "01d5f44b57c80418",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/1000 not3e.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
-            "id": "0d8bb6fe9e276ada",
+            "id": "5affb4a9689f243a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 11 Certification Tips/10900 note.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
-            "id": "48bf30bedc06305d",
+            "id": "b55367988da72bdc",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 12 Lightning Labs/100990 notes.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
-            "id": "5f6fd5952366f817",
+            "id": "931ae23cdf54fa4a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "063bf2f13a295910",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -122,7 +142,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 255.5
+    "width": 503.5
   },
   "right": {
     "id": "d15b04899753fd0f",
@@ -138,6 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,6 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +197,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md"
+              }
             }
           }
         ]
@@ -195,17 +219,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "48bf30bedc06305d",
+  "active": "931ae23cdf54fa4a",
   "lastOpenFiles": [
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 12 Lightning Labs/100990 notes.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 11 Certification Tips/10900 note.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/1000 not3e.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/100000 notes.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/10000 notes.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/1000 notes.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/97 CronJobs.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/92 Updating a Deployment.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def cronjob.yaml.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/96 Jobs.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def jobs.yaml.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def pod.yaml.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/91 Rolling Updates and Rollbacks in Deployments.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/93 Demo - Deployments.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 5 Observability/82 Container Logging.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 5 Observability/85 Monitor and Debug Applications.md"
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/96 Jobs.md"
   ]
 }
