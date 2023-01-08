@@ -1,5 +1,5 @@
 
-```
+```EXEC_COMMAND
 apiVersion: v1
 kind: Pod
 metadata:
