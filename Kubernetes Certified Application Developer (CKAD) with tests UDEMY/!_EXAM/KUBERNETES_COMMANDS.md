@@ -529,3 +529,5 @@ Yes No
 
 Last modified November 22, 2022 at 9:21 PM PST: [Fix typos in cheatsheet.md (3e20970eb3)](https://github.com/kubernetes/website/commit/3e20970eb3c3858c139e4139d8d91dbfb0e7a386)
 
+[[EXAM_1]]
+[[KUBERNETES_COMMANDS_2]]
