@@ -88,10 +88,5 @@ spec:
 
 
 
+> kubectl create ingress ingres-pay -n critical-space --rule="/pay=pay-service:8282"
 
-
-
-
-
-
-![[ingress resource.png]]
