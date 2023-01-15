@@ -2,6 +2,7 @@
 2.  [Reference](https://kubernetes.io/docs/reference/)
 3.  [Command line tool (kubectl)](https://kubernetes.io/docs/reference/kubectl/)
 4.  [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+5. [Kubectl Reference Docs (kubernetes.io)](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
 
 # kubectl Cheat Sheet
 
