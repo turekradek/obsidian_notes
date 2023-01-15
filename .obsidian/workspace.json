@@ -11,12 +11,8 @@
             "id": "70f0057c2b85b3b6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/109 labs.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           },
           {
@@ -81,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "d15b04899753fd0f",
@@ -98,7 +93,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/109 labs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +109,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/109 labs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +130,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/109 labs.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -161,6 +152,7 @@
   },
   "active": "70f0057c2b85b3b6",
   "lastOpenFiles": [
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/109 labs.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/108 FAQ what is the rewrite target option.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/100 services.md",
     "Python learn pro advanced python programming/Section 1 Python Comprehension/4 List Comprehension part 2.md",
@@ -169,7 +161,6 @@
     "Python learn pro advanced python programming/Section 1 Python Comprehension/5 list comprehension vs lambda function.md",
     "Python learn pro advanced python programming/Section 1 Python Comprehension/3 List Comprehension part 1.md",
     "Python learn pro advanced python programming/Section 1 Python Comprehension/a.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/109 labs.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/105 Article Ingress.md"
   ]
 }
