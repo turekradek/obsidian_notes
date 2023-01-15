@@ -11,8 +11,12 @@
             "id": "70f0057c2b85b3b6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/108 FAQ what is the rewrite target option.md",
+                "mode": "preview",
+                "source": false
+              }
             }
           },
           {
@@ -93,6 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/108 FAQ what is the rewrite target option.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,6 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/108 FAQ what is the rewrite target option.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,7 +136,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 7 Services and Networking/108 FAQ what is the rewrite target option.md"
+              }
             }
           }
         ]
