@@ -19,11 +19,11 @@ Network Security
 
 Network Policy
 
-```
-PodSelector:
-   matchLabels:
-       role: db
-```
+
+<span style="color:green">PodSelector</span>
+   <span style="color:green">         matchLabels:</span>
+	   <span style="color:green">       role: db</span>
+
 
 DBPod
 
@@ -33,14 +33,46 @@ labels:
 ```
 
 ---
+<span style="color:green">PodSelector</span>
+   <span style="color:green">         matchLabels:</span>
+	   <span style="color:green">       role: db</span>
+	   
+ **policyTypes:
+   -Ingress 
+   ingress: 
+  from: 
+    -   podSelector: 
+			matchLabels: 
+				name: api-pod 
+	ports: 
+    -   protocol: TCP 
+	    port: 3306
 
-policyTypes:
 
--   Ingress ingress: Allow
--   from: Ingress
-    -   podSelector: Traffic matchLabels: From name: api-pod API Pod ports: on
-    -   protocol: TCP Port 3306 port: 3306
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+	name: db-policy
+spec
+	__<span style="color:green">PodSelector</span>
+   ___<span style="color:green"> __        matchLabels:</span>
+	   <span style="color:green">   ______    role: db</span>
+	**policyTypes:
+	   -Ingress 
+	   ingress: 
+		-  from: 
+		    -   podSelector: 
+					matchLabels: 
+						name: api-pod 
+			ports: 
+		    -   protocol: TCP 
+			    port: 3306   
 
-```
-apiVerion: networking.
-```
+> kubectl create -f policy-definition.yaml
+
+| <span style="color:green">Solutions tha Support Network Policies:</span> | <span style="color:red">Colutions that DO NOT Support NEtwork Policies:</span>|
+|-|-|
+| Kube-router| Flanel|
+|Calico||
+|Romana||
+|Weave-net||
