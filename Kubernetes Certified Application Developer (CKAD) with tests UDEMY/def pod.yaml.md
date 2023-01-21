@@ -153,3 +153,28 @@ spec:
 			  - contanerPort: 8080
 ```
 
+## Volume 
+#volume
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: random-numer-generator
+spec:
+	containers:
+		- name: alpine
+		  image: alpine
+		  command: ["/bin/sh","-c"]
+		  args: ["shuf -i 0-100 -n 1 >> /opt/number.out;"]
+		  volumeMounts:
+		  - mountPath: opt
+		    name: data-volume
+	volumes:
+	- name: data-volume
+	  hostPath:
+		  path: /data
+		  type: Direcotry
+
+```
+
+[[115 Volumes]]
