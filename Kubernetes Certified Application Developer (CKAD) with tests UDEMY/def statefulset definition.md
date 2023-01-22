@@ -1,6 +1,6 @@
 ## STATEFUL DEFINITION
 #STATEFUL #STATEFULDEFINITION
-[[125 (opt for exam) Stateful Sets Introfuction]]
+[[125 (opt for exam) Stateful Sets Introduction]]
 ```statefulset_definition_yaml
  apiVersion: v1                                                     
  kind: StatefulSet                                       
