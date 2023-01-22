@@ -35,3 +35,9 @@ spec:
 			      claimName: data-volume
 			
 ```         
+
+![[127_foto.png]]
+
+
+
+
