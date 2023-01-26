@@ -1,3 +1,4 @@
+#configmap 
 ```
 apiVersion: v1
 kind: Pod
@@ -21,6 +22,8 @@ spec:
 APP_COLOR: blue
 APP_MODE: prod
 ```
+
+## how to use inside pod
 
 1.  Create ConfigMap
 2.  Inject into Pod
@@ -72,17 +75,79 @@ spec:
 		  image: nginx
 		  ports:
 		    -  containerPort: 8080
-		  envFrom:
+		  envFrom: # it's a list 
 		    - configMapRef:
-		        name: app-config
+		        name: app-config # NAME OF CONFIGMAP LIKE BELOW
 ```
 
 ```config-map.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
-	name: app-config
+	name: app-config # USED ABOVE IN POD DEFINITION FILE 
 data:
 	APP_COLOR: blue
 	APP_MODE: prod
 ```
+
+## 2 OPORTUNITY  SINGLE ENV 
+
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+		- name: nginx-contrainer
+		  image: nginx
+		  ports:
+		    -  containerPort: 8080
+		  **env:
+			  - name: APP_COLOR
+			    valueFrom:
+				    configMapKeyRef:
+					    name: app-config
+					    key: APP_COLOR**
+			   
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+	**name: app-config # USED ABOVE IN POD DEFINITION FILE 
+data:
+	APP_COLOR: blue
+	APP_MODE: prod**
+
+## 3 OPORTUNITY  VOLUME 
+
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+		- name: nginx-contrainer
+		  image: nginx
+		  ports:
+		    -  containerPort: 8080
+		  **volumes:
+		  - name: app-config-volume
+		    configMap:
+			    name: app-config**
+			   
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+	**name: app-config # USED ABOVE IN POD DEFINITION FILE 
+data:
+	APP_COLOR: blue
+	APP_MODE: prod
+
+

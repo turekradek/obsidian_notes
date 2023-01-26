@@ -4,8 +4,10 @@ DB_User: user=
 DB_Password: password
 ```
 
-
+## staps to use secrets
 - [ ] create secret 
+- [ ] Inject into Pod
+
 
 ```imporative
 kubectl create secret generic
@@ -24,20 +26,41 @@ kubectl create secret generic \
 	app-secret --from-file=secret.properties
 ```
 
+```imporative
+kubectl create secret generic
+	app-secret --from-file=app_secret.properties
+```
+
 ```declarative
 kubectl create -f 
 ```
 
-```secret_data_yaml
-apiVersion:
-kind:
+secret_data_yaml
+apiVersion: v1
+kind: Secret
 metadata:
-	name: app-secret
+	name: **app-secret**
 data:
 	DB_Host: fadfg # convertet format
-	DB_User: roadfgadfot
+	DB_User: roadfgadfot # echo -n 'user' | base64      TO ENCODE    echo -n 'asdfas' | base64 --decode
 	DB_Password: adfgadf
-```
+
+apiVersion: v1
+kind: Pod
+metadata:
+	name: simple-webapp-color
+	labels:
+		name: simple-webapp-color
+spec:
+	containersL
+	- name: simple-webapp-color
+	  image: simple-webapp-color
+	  ports:
+		  - containerPort: 8080
+	  envFrom:
+		  - secretRef:
+		    name: **app-secret**
+		
 
 | [[def secret.yaml]] | definition secret |
 | - | - |
@@ -93,7 +116,7 @@ metadata:
 	labels:
 		name: simple-webapp-color
 spec:
-	containersL
+	containers:
 	- name: simple-webapp-color
 	  image: simple-webapp-color
 	  ports:
@@ -139,3 +162,20 @@ paswrd
 - [x] Anyone able to create pods/deployments in the same namespace can access the secrets
 	- [ ] Configure least-provilege access to Secrets - RBAC
 - [ ] Consider third-party secrets store providers AWS Provider, Azure Provider, GCP Provider, Vault Provider
+
+
+```app.py
+import os
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def main():
+	mysql.connector.connect(host='mysql', database-'mysql',
+							user='root', password='paswrd')
+	return render_template('hello.html', color=fetchcolor() )
+
+if __name__ == "__main__":
+	app.run(host="0.0.0.0", port="8080")
+```

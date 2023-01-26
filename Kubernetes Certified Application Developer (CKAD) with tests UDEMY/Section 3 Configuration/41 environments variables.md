@@ -1,4 +1,4 @@
-
+#variables #envvariables 
 > docker run -e APP_COLOR=pink simple-webapp-color
 
 [[def pod.yaml]]
@@ -22,16 +22,20 @@ spec:
 
 
 env:
-	- name: APP_COLOR                                 PLAIN KEY VALUE
-	   value: pink
+	**- name: APP_COLOR                                 PLAIN KEY VALUE
+	   value: pink**
 
+```
 env:
 	- name: APP_COLOR
 	   valueFrom:                                           CONFIGMAP
 		   configMapKeyRef:
+```
 
+```
 env:
 	- name: APP_COLOR
 	   valueFrom:                                              SECRETS
 		   secretKeyRef:
+```
 
