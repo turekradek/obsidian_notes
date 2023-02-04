@@ -1,0 +1,12 @@
+```nginx_conf
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-2
+  labels:
+    env: production
+spec:
+  containers:
+    - name: nginx
+      image: nginx 
+```

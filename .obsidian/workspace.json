@@ -4,18 +4,139 @@
     "type": "split",
     "children": [
       {
-        "id": "52979096a5451c5b",
+        "id": "1295eb0d38015750",
         "type": "tabs",
         "children": [
           {
-            "id": "ad9a6a150fb4af2d",
+            "id": "b9e19e35955e0a06",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "6e18d418b2b51a78",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "e3e36cc0947ca17f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "c3dedfdbaeb1304b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "32d71c0c090e45fa",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "b88332b27ce61582",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "c7a7f4b056691bf0",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "ef5064e10f0f35bd",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "a8d3da8c4cc4cf76",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "72a666c36a09b6cb",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "4a013f1244ba7b49",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "ce98bd956f8a6564",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "7a626225ff8ad610",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "f5702091e8da9f31",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "31caf6cab6fa674e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "989b4d789ac4568c",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 15
       }
     ],
     "direction": "vertical"
@@ -44,7 +165,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#pod",
+                "query": "get --all",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 503.5
+    "width": 336.5
   },
   "right": {
     "id": "d15b04899753fd0f",
@@ -87,7 +208,7 @@
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -138,17 +259,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7ff73196e65f1c87",
+  "active": "989b4d789ac4568c",
   "lastOpenFiles": [
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/97 CronJobs.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/92 Updating a Deployment.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def cronjob.yaml.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/96 Jobs.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def jobs.yaml.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def pod.yaml.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/91 Rolling Updates and Rollbacks in Deployments.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/93 Demo - Deployments.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 5 Observability/82 Container Logging.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 5 Observability/85 Monitor and Debug Applications.md"
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/140 Role Based access Controls.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/139 Authorization.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/api_groups.jpg",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/136 Practice Test KubeConfig.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/128 Updates for Sep 2021 Change.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/129 Define, build and modify container images.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/130 Practice test Docker Imges.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/131 Authentication Authorization and admission control.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/132 Authentication.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/138 API Groups.md"
   ]
 }
