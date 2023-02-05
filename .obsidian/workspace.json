@@ -8,144 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "b9e19e35955e0a06",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "6e18d418b2b51a78",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "e3e36cc0947ca17f",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "c3dedfdbaeb1304b",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "32d71c0c090e45fa",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "b88332b27ce61582",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "c7a7f4b056691bf0",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "ef5064e10f0f35bd",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "a8d3da8c4cc4cf76",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "72a666c36a09b6cb",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "4a013f1244ba7b49",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "ce98bd956f8a6564",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "7a626225ff8ad610",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "f5702091e8da9f31",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "31caf6cab6fa674e",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "989b4d789ac4568c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/140 Role Based access Controls.md",
-                "mode": "preview",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "9fcf359107945802",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/141 test.md",
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md",
                 "mode": "source",
                 "source": false
               }
@@ -162,9 +30,200 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "564460a8d3e627c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/168 Labs - Helm Concepts.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6433a0f88a0eca2a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/140 Role Based access Controls.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a7b8c6a747c0bb06",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def role yaml.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "54d782bff4616e1f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/143 Cluster Roles.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8cf5949bb47a1ead",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def cluster role yaml.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5dc4aa9bb6a19a6d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/169 Kubernetes Challenges.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "51bd473f763773ed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 11 Certification Tips/172 Additional tips.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "43f4514daf6c7471",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/144 Practice Test Cluster Roles.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "52698f2bb2f2315d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/145 Solution labs.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "14be35bfffe3f157",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/91 Rolling Updates and Rollbacks in Deployments.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e9cdf84c7a010e85",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/146 Admission Controllers.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8bfe8abcb1a2da3d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/147 labs addmission Controllers.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "90bca2a74803a813",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/149 Validating and Mutating Admission Controllers.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "376a8e2ca6d35ddb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/150 ! Labs -Validating and Mutating Admission Controllers.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b6a602463f11193f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/151 ! Solution -Validating and Mutating Admission Contro.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c3a01a02b2ca99f3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/91 Rolling Updates and Rollbacks in Deployments.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ],
-        "currentTab": 17
+        ]
       }
     ],
     "direction": "vertical"
@@ -193,7 +252,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "get --all",
+                "query": "<table",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -214,7 +273,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 336.5
+    "width": 200
   },
   "right": {
     "id": "d15b04899753fd0f",
@@ -230,7 +289,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/142 Solution test Based Access Controls.md",
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -247,7 +306,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/142 Solution test Based Access Controls.md",
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -270,7 +329,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/142 Solution test Based Access Controls.md"
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md"
               }
             }
           }
@@ -291,17 +350,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "1ad7fdc793cce9d9",
+  "active": "9fcf359107945802",
   "lastOpenFiles": [
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/141 test.md",
+    "[API.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/140 Role Based access Controls.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/138 API Groups.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/139 Authorization.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/136 Practice Test KubeConfig.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/135 KubeConfig.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/api_groups.jpg",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/128 Updates for Sep 2021 Change.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/129 Define, build and modify container images.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/130 Practice test Docker Imges.md"
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/91 Rolling Updates and Rollbacks in Deployments.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/93 Demo - Deployments.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/92 Updating a Deployment.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/151 ! Solution -Validating and Mutating Admission Contro.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/150 ! Labs -Validating and Mutating Admission Controllers.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/149 Validating and Mutating Admission Controllers.md"
   ]
 }
