@@ -20,6 +20,198 @@
             }
           },
           {
+            "id": "61374ac5049960dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/153 API Deprecations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d4abe5d624360ee8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/154 Lab API Versions Deprecations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2e995dc771357088",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/156 Custom Resource Definition.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c98b8c249e36c7d2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/157 Labs Custom Resource Definition.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d7756ddbf8ab043a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/158 Custom Controllers.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "af184da7b38be9bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/159 Operator Framework.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "440a55095282c502",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/160 Deployument Strategy - Blue Green.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "372291e808e25911",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/161 Deployument Strategy Canary.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "39bbf4f429168331",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/162 Pracice Test deployments starategies.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6943697fa9d2258e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/163 ! Solution Deployment strategies.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dab34ea2c82ac9e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/164 Helm Introducion.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4cf9c8e9f711cb5d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/165 Install Helm.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4be11079014f23e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/166 Lab Install Helm.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "57b49b205ba536ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/168 Labs - Helm Concepts.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5766c6fe51eb9ced",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/168 Labs - Helm Concepts.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "79739008f61aaec9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cheats-sheets/vi/vi cheat sheets.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "1ad7fdc793cce9d9",
             "type": "leaf",
             "state": {
@@ -223,7 +415,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 16
       }
     ],
     "direction": "vertical"
@@ -273,7 +466,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 242.5
   },
   "right": {
     "id": "d15b04899753fd0f",
@@ -289,7 +482,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md",
+                "file": "cheats-sheets/vi/vi cheat sheets.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -306,7 +499,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md",
+                "file": "cheats-sheets/vi/vi cheat sheets.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -329,7 +522,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md"
+                "file": "cheats-sheets/vi/vi cheat sheets.md"
               }
             }
           }
@@ -350,17 +543,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9fcf359107945802",
+  "active": "79739008f61aaec9",
   "lastOpenFiles": [
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/141 test.md",
-    "[API.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/140 Role Based access Controls.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/91 Rolling Updates and Rollbacks in Deployments.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/93 Demo - Deployments.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/92 Updating a Deployment.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/151 ! Solution -Validating and Mutating Admission Contro.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/150 ! Labs -Validating and Mutating Admission Controllers.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/149 Validating and Mutating Admission Controllers.md"
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/168 Labs - Helm Concepts.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/167 Helm concepts.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/163 ! Solution Deployment strategies.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/155 ! Solution API Versions.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def all objects.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/166 Lab Install Helm.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/165 Install Helm.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/164 Helm Introducion.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/162 Pracice Test deployments starategies.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/161 Deployument Strategy Canary.md"
   ]
 }
