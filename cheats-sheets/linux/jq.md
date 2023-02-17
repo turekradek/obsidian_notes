@@ -135,3 +135,46 @@ true
 
 false
 
+
+jq '.[] | .name'
+jq '[.user, .projects[]]'
+
+select(boolean_expression)  
+      The function select(foo) produces its input unchanged if foo returns true for that input,  
+      and produces no output otherwise.  
+  
+      It's useful for filtering lists: [1,2,3] | map(select(. >= 2)) will give you [2,3].  
+  
+          jq 'map(select(. >= 2))'  
+             [1,5,3,0,7]  
+          => [5,3,7]  
+  
+          jq '.[] | select(.id == "second")'  
+             [{"id": "first", "val": 1}, {"id": "second", "val": 2}]  
+          => {"id": "second", "val": 2}
+
+
+map(x), map_values(x)  
+      For any filter x, map(x) will run that filter for each element of the  input  array,  and  
+      return  the  outputs  in a new array. map(.+1) will increment each element of an array of  
+      numbers.  
+  
+      Similarly, map_values(x) will run that filter for each element, but it will return an ob‐  
+      ject when an object is passed.  
+  
+      map(x) is equivalent to [.[] | x]. In fact, this is how it's defined. Similarly, map_val‐  
+      ues(x) is defined as .[] |= x.  
+  
+          jq 'map(.+1)'  
+             [1,2,3]  
+          => [2,3,4]  
+  
+          jq 'map_values(.+1)'  
+             {"a": 1, "b": 2, "c": 3}  
+          => {"a": 2, "b": 3, "c": 4}
+
+cat all_folders.json | jq -r  '.folderTitle'
+cat all_folders.json | jq -r  'select(.folderTitle == "Boson")  
+'
+
+cat all_folders.json | jq -s  'sort_by(.id)'
