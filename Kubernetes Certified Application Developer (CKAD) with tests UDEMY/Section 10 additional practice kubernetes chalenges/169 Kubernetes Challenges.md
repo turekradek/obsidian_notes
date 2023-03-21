@@ -27,6 +27,194 @@ Certification Tips - Student Tips #exam #tips
 
 Make sure you check out these tips and tricks from other students who have cleared the exam:
 
+_____
+Build user information for martin in the default kubeconfig file: User = martin , client-key = /root/martin.key and client-certificate = /root/martin.crt
+
+1.  kubectl config set-credentials martin --client-key=martin.key --client-certificate=martin.crt --embed-certs=true
+
+Create a new context called 'developer' in the default kubeconfig file with 'user = martin' and 'cluster = kubernetes'
+1.  kubectl config set-context developer --cluster=kubernetes --user=martin 
+3. kubectl config use-context developer
+4. kubectl config set-credentials martin --client-certificate ./martin.crt --client-key ./martin.key 
+## pvc 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: jekyll-site
+  namespace: development
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-storage
+  volumeName: jekyll-site
+
+## role 
+
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: development
+  name: developer-role
+rules:
+- apiGroups: [""]
+  resources: ["services", "pods", "persistentvolumeclaims"]
+  verbs: ["*"]
+
+> kubectl create role developer-role --namespace development --verb=* --resource=services,pods,persistentvolumeclaims --dry-run=client -o yaml > role.yaml
+
+
+## rolew binding
+
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: developer-rolebinding
+  namespace: development
+subjects:
+- kind: User
+  name: martin
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: developer-role
+  apiGroup: rbac.authorization.k8s.io
+
+> kubectl create rolebinding developer-rolebinding --namespace development --role=developer-role --user=martin --dry-run=client -o yaml > rolebinding.yaml
+
+## service 
+apiVersion: v1
+kind: Service
+metadata:
+  name: jekyll
+  namespace: development
+spec:
+  selector:
+    app: jekyll
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 4000
+    nodePort: 30097
+  type: NodePort
+
+> kubectl create service nodeport jekyll --namespace=development --selector=app=jekyll --tcp=8080:4000 --node-port=30097 --dry-run=client -o yaml > serv.yaml
+
+
+> kubectl expose deployment jekyll --type=NodePort --name=jekyll --port=8080 --target-port=4000 --namespace=development --node-port=30097
+
+
+## pods
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jekyll
+  namespace: development
+  labels:
+    run: jekyll
+spec:
+  initContainers:
+  - name: copy-jekyll-site
+    image: kodekloud/jekyll
+    command: ["jekyll", "new", "/site"]
+    volumeMounts:
+    - name: site
+      mountPath: /site
+  containers:
+  - name: jekyll
+    image: kodekloud/jekyll-serve
+    volumeMounts:
+    - name: site
+      mountPath: /site
+  volumes:
+  - name: site
+    persistentVolumeClaim:
+      claimName: jekyll-site
+
+
+
+## martin 
+-     
+    Tasks not completed!
+
+-   Build user information for martin in the default kubeconfig file: User = martin , client-key = /root/martin.key and client-certificate = /root/martin.crt
+    
+-   Create a new context called 'developer' in the default kubeconfig file with 'user = martin' and 'cluster = kubernetes'
+
+## developer role
+-     
+    Tasks not completed!
+
+-   'developer-role', should have all(*) permissions for services in development namespace
+    
+-   'developer-role', should have all permissions(*) for persistentvolumeclaims in development namespace
+    
+-   'developer-role', should have all(*) permissions for pods in development namespace
+
+## kube config
+-     
+    Tasks not completed!
+
+-   set context 'developer' with user = 'martin' and cluster = 'kubernetes' as the current context.
+
+## jekyll node 
+-     
+    Tasks not completed!
+
+-   Service 'jekyll' uses targetPort: '4000', namespace: 'development'
+    
+-   Service 'jekyll' uses Port: '8080', namespace: 'development'
+    
+-   Service 'jekyll' uses NodePort: '30097', namespace: 'development'
+
+## jekyl pv
+-     
+    Tasks not completed!
+
+-   jekyll-site pv is already created. Inspect it before you create the pvc.
+
+## jekyl pvc 
+-     
+    Tasks not completed!
+
+-   Storage Request: 1Gi
+    
+-   Access modes: ReadWriteMany
+    
+-   pvc name = jekyll-site, namespace = development
+    
+-   'jekyll-site' PVC should be bound to the PersistentVolume called 'jekyll-site'.
+
+## jekyll
+
+-   pod: 'jekyll' has an initContainer, name: 'copy-jekyll-site', image: 'kodekloud/jekyll'
+    
+-   initContainer: 'copy-jekyll-site', command: [ "jekyll", "new", "/site" ] (command to run: jekyll new /site)
+    
+-   pod: 'jekyll', initContainer: 'copy-jekyll-site', mountPath = '/site'
+    
+-   pod: 'jekyll', initContainer: 'copy-jekyll-site', volume name = 'site'
+    
+-   pod: 'jekyll', container: 'jekyll', volume name = 'site'
+    
+-   pod: 'jekyll', container: 'jekyll', mountPath = '/site'
+    
+-   pod: 'jekyll', container: 'jekyll', image = 'kodekloud/jekyll-serve'
+    
+-   pod: 'jekyll', uses volume called 'site' with pvc = 'jekyll-site'
+    
+-   pod: 'jekyll' uses label 'run=je
+
+____
+# chalenge 2
+
+
+
+_____
+
 # 70 Certification Tips - student tips
 
 - [ ] [https://www.linkedin.com/pulse/my-ckad-exam-experience-atharva-chauthaiwale/](https://www.linkedin.com/pulse/my-ckad-exam-experience-atharva-chauthaiwale/)

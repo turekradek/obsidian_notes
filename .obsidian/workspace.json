@@ -13,7 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/169 Kubernetes Challenges.md",
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def all objects.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0f31179d29e9f377",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cheats-sheets/linux/screen.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b6b087eca464f0d4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/169 chalenge 4.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/169 70 170 171 172 178.md",
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def role yaml.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "zsh",
+                "query": "persi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -82,7 +106,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 479.5
+    "width": 353.5
   },
   "right": {
     "id": "d15b04899753fd0f",
@@ -98,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/169 70 170 171 172 178.md",
+                "file": "cheats-sheets/linux/screen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/169 70 170 171 172 178.md",
+                "file": "cheats-sheets/linux/screen.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/169 70 170 171 172 178.md"
+                "file": "cheats-sheets/linux/screen.md"
               }
             }
           }
@@ -159,17 +183,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "555054be2a41f27f",
+  "active": "0f31179d29e9f377",
   "lastOpenFiles": [
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def all objects.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/169 Kubernetes Challenges.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/170 More practice.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 3 Configuration/70 Certification Tips - student tips.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/91 Rolling Updates and Rollbacks in Deployments.md",
-    "cheats-sheets/wsl/zsh_wsl2.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/140 Role Based access Controls.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/169 chalenge 4.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/117 Persistent Volumes Claims.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/116 Persistent Volumes.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/123 (opt for exam) Practice test.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def role yaml.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/!_EXAM/KUBERNETES_COMMANDS.md",
     "cheats-sheets/kubernetes/kubectl.md",
-    "cheats-sheets/linux/default shell.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/152 API Version.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 9 updates for sep 2021 changes/128 Updates for Sep 2021 Change.md"
+    "Kubernetes_for_absolute_beginners_udemy/1 Kubernetes_for_absolute_beginners.md"
   ]
 }
