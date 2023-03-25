@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cheats-sheets/linux/screen.md",
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cheats-sheets/linux/screen.md",
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cheats-sheets/linux/screen.md",
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cheats-sheets/linux/screen.md"
+                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md"
               }
             }
           }
@@ -185,15 +185,15 @@
   },
   "active": "0f31179d29e9f377",
   "lastOpenFiles": [
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 12 Lightning Labs/100990 notes.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/178 Mock Exam - 1.md",
+    "cheats-sheets/linux/screen.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def all objects.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/169 Kubernetes Challenges.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 10 additional practice kubernetes chalenges/169 chalenge 4.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/117 Persistent Volumes Claims.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/116 Persistent Volumes.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/123 (opt for exam) Practice test.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/def role yaml.md",
-    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/!_EXAM/KUBERNETES_COMMANDS.md",
-    "cheats-sheets/kubernetes/kubectl.md",
-    "Kubernetes_for_absolute_beginners_udemy/1 Kubernetes_for_absolute_beginners.md"
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 8 State Persistence/123 (opt for exam) Practice test.md"
   ]
 }
