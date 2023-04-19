@@ -20,6 +20,7 @@ labels:
 
 [[def persistent volume]]
 #persistent #persistentvolume
+<<<<<<< HEAD
 
 ## PersistentVolumeClaim 
 ```
@@ -34,3 +35,5 @@ spec:
 		requests
 			storage: 1Gi
 	
+=======
+>>>>>>> main

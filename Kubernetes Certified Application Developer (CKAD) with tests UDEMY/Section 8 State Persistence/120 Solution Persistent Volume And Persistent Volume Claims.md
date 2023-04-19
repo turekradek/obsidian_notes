@@ -1,4 +1,5 @@
 [[119 Practice Test - Persistent Volumes]]
+<<<<<<< HEAD
 
 
 1. So, we have deployed a pod, inspect the pod, and wait for it to start running.
@@ -27,3 +28,5 @@
 	> k replace --force -f /tmp/kubectl-edit-235235.yaml
 	
 	
+=======
+>>>>>>> main

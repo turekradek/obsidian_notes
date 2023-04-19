@@ -23,6 +23,7 @@ user-details.csv
 
 kube-aposerver.service
 --basic-auth0file=user-details.csv
+<<<<<<< HEAD
 [[def kube-apiserver]]
 
 [[def kube-api server configuraion]]
@@ -70,3 +71,5 @@ aetbatbgat,user4,u00013,group3
 
 > curl -v -k https://master-node-ip:6443/api;v1/pods -header "Authorization: Baearer adfvadfbvadfbagd"
 
+=======
+>>>>>>> main

@@ -135,6 +135,7 @@ true
 
 false
 
+<<<<<<< HEAD
 
 jq '.[] | .name'
 jq '[.user, .projects[]]'
@@ -178,3 +179,5 @@ cat all_folders.json | jq -r  'select(.folderTitle == "Boson")
 '
 
 cat all_folders.json | jq -s  'sort_by(.id)'
+=======
+>>>>>>> main
