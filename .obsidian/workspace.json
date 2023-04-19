@@ -32,6 +32,66 @@
             }
           },
           {
+            "id": "16750b8e49b4fe9a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cheats-sheets/python different versions.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4d1c04f314129715",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "In Learning.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9c0ce457ac261da7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/1. Time Management/Time management.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8ab4ac801e04016d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/2. Working with Data/Working with Data.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a639e08b7cb6ea59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/2. Working with Data/Working with Data.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "b6b087eca464f0d4",
             "type": "leaf",
             "state": {
@@ -56,7 +116,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -85,7 +145,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "persi",
+                "query": "sudo install pyt",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -106,7 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 353.5
+    "width": 364.5
   },
   "right": {
     "id": "d15b04899753fd0f",
@@ -122,7 +182,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
+                "file": "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/2. Working with Data/Working with Data.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +199,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
+                "file": "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/2. Working with Data/Working with Data.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +222,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md"
+                "file": "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/2. Working with Data/Working with Data.md"
               }
             }
           }
@@ -183,8 +243,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0f31179d29e9f377",
+  "active": "a639e08b7cb6ea59",
   "lastOpenFiles": [
+    "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/3. Creating a Process/Creating o Process.md",
+    "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/2. Working with Data/Working with Data.md",
+    "In Learning Become a Data Scientist/1. A Day In The Life of a Data Scientist/1. Time Management/Time management.md",
+    "In Learning.md",
+    "In Learning Become a Data Scientist/12. Side Hustle Strategies for Data Science and Analytics Experts",
+    "In Learning Become a Data Scientist/11. Lessons from Data Scientists",
+    "In Learning Become a Data Scientist/10. Data Fluency Exploring and Describing Data",
+    "In Learning Become a Data Scientist/9. Learning Data Governance",
+    "In Learning Become a Data Scientist/8. Big Data in the Age of AI",
+    "In Learning Become a Data Scientist/7. Data Visualization Storytelling",
+    "In Learning Become a Data Scientist/6. Statistics Foundations 2 Probability",
+    "In Learning Become a Data Scientist/5. Statistics Foundations 1 The Basics",
+    "In Learning Become a Data Scientist/4. Data Science Foundations Fundamentals 2019",
+    "In Learning Become a Data Scientist/3. Data Science and Analytics Career Paths and Certifications Firs Steps",
+    "cheats-sheets/python different versions.md",
+    "cheats-sheets/docker/Portainer as a GUI for Docker.md",
+    "cheats-sheets/docker/docker-networking.md",
+    "cheats-sheets/docker/docker-compose.md",
+    "cheats-sheets/docker/docker.md",
+    "cheats-sheets/wsl/WSL.md",
+    "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 6 POD Design/97 CronJobs.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 12 Lightning Labs/100990 notes.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/10909 notes.md",
     "Kubernetes Certified Application Developer (CKAD) with tests UDEMY/Section 13 Mock Exams/178 Mock Exam - 1.md",
