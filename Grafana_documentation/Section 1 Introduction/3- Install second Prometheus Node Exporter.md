@@ -1,1 +1,0 @@
-[Install Second Prometheus Node Exporter - Grafana Tutorials (sbcode.net)](https://sbcode.net/grafana/install-prometheus-node-exporter/)
