@@ -15,3 +15,8 @@ wsl –-import <Image Name you choose> <Directory to store and run the image> <D
 
 wsl -d <WSL imported image name>
 ```
+
+
+sudo update-alternatives --config python3
+
+ls -ls /usr/bin/python*   

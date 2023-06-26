@@ -90,3 +90,17 @@ Next, install the downloaded file.
 
 Once installed, it is a good idea to check for upgrades.
 - [ ] python3.8 -m pip install --upgrade pip
+
+
+------
+- [ ] sudo apt update && sudo apt upgrade -y
+- [ ] sudo apt install wget build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev -y
+- [ ] wget https://www.python.org/ftp/python/
+- [ ] wget https://www.python.org/ftp/python/3.11.3/Python-3.11.3.tar.xz
+- [ ] tar -xvf Python-3.11.3.tar.xz
+- [ ] cd Python-3.11.3
+- [ ] ./configure --enable-optimizations
+- [ ] sudo make altinstall
+- [ ] sudo update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.11 1
+- [ ] python3 --version
+- [ ] pip3.11 --version
