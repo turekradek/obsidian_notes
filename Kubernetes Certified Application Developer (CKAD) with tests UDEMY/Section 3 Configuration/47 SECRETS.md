@@ -1,3 +1,40 @@
+#SECRETS
+```ENV
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+		- name: nginx-contrainer
+		  image: nginx
+		  ports:
+		    -  containerPort: 8080
+		  envFrom:
+		  - secretRef:
+		      name: app-config
+```
+
+```SINGLE_ENV
+env:
+	- name: DB_Password
+	volumeFrom:
+	  secretKeyRef:
+	    name: app-secret
+	    key: DB_Password
+```
+
+```VOLUME
+volumes:
+- name: app-secret-volume
+  secret: 
+    secretName: app-secret
+```
+
+
 ```secret
 DB_Host: host=
 DB_User: user=
@@ -67,7 +104,7 @@ spec:
 
 >kubectl create -f secret-data.yaml
 
-# CODING
+# CODING #CODING
 
 > echo -n 'mysql' | base64
 > fadfg
@@ -97,9 +134,10 @@ uid: 34523452-23456-23462-2356-2356-45
 type: Opaque
 ```
 
-# UNCODING
+# UNCODING #UNCODING
 
 > echo -n 'fadfg' | base64 --decode
+> 
 > mysql
 
 > echo -n 'roadfgadfot' | base64 --decode

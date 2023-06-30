@@ -1,5 +1,5 @@
 #configmap 
-```
+```ENV
 apiVersion: v1
 kind: Pod
 metadata:
@@ -16,6 +16,22 @@ spec:
 		  envFrom:
 		  - configMapRef:
 		      name: app-configmap
+```
+
+```SINGLE_ENV
+env:
+	- name: APP_COLOR
+	VALUEfROM:
+	  configMapRef:
+	    name: app-config
+	    key: APPC_COLOR
+```
+
+```VOLUME
+volumes:
+- name: app-config-volume
+  configMap: 
+    name: app-config
 ```
 
 ```configMap
