@@ -114,6 +114,37 @@ users:
 > kubectl config use-context prod-user@production
 
 kubectl config -h 
+## TO EDIT CONFIG
+
+> kubectl config use-context prod-user@production
+
+> k  config -h
+
+- /etc/kubernetes/pki/ca.crt 
 
 
+apiVersion: v1
+kind: Config
+
+
+clusters:
+- name: my-kube-playgroud
+  cluster: 
+	  certificate-authority: # /etc/kubernetes/pkl/ca.crt
+	             <span style="color:yellow"> _____colorcertificate-authority-data:</span> ;aerigbeorib;eoib"Ifb'eirnba'eie TOKEN
+
+>cat ca.crt | base64
+
+contexts:
+- name: my-kube-admin@my-kube-playground
+  context:
+	  cluster: my-kube-playgroud # clusteran me
+	  user: my-kube-admin # user name 
+	  namespace: finance # CAN BE USE FOR SPEC
+
+users:
+- name: my-kube-admin
+  user:
+	  client-certificate: admin.crt
+	  client-key: admin.key
 

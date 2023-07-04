@@ -38,13 +38,13 @@ Przykłady Imperative commands: Kubectl Reference Docs (kubernetes.io) https://k
 - [x] Jeśli jesteś zielony w temacie warto zacząć od Kubernetes for the Absolute Beginners - Hands-on (udemy.com)
 - [x] Nastepnie przejść szkolenie Kubernetes Certified Application Developer (CKAD) with Tests (udemy.com) w trakcie szkolenia na bieżąco robić zadania załączone do tematu Udemy Labs - Certified Kubernetes Application Developer - KodeKloud. Póki co pomijamy Lightning Labs i Mock Exams!!!
 - [ ] W dziale „Update for Sep 2021 Changes” przerobić tematy wraz z zadaniami na KodeKloud
-	- [ ] Define, build, and modify container images
-	- [ ] Deployment Strategy – Blue Green 
-	- [ ] Deployment Strategy - Canary 
-	- [ ] Helm Introduction 
-	- [ ] Helm Concepts
+	- [x] Define, build, and modify container images [[128 Updates for Sep 2021 Change]] [[129 Define, build and modify container images]]
+	- [x] Deployment Strategy – Blue Green [[161 Deployument Strategy - Blue Green]]
+	- [x] Deployment Strategy - Canary [[162 Deployment Strategy Canary]]
+	- [ ] Helm Introduction [[166 Install Helm]]
+	- [ ] Helm Concepts [[169 Labs - Helm Concepts]]
 - [ ] Po skończeniu szkolenia i przerobieniu zadań z punktu 2 i 3, ponownie przejść te same zadania na kodekloud. Utrwalisz sobie komendy i ogólną wiedzę na temat poszczególnych komponentów. Póki co pomijamy Lightning Labs i Mock Exams!!!
-- [ ] Zrób 3 rundy z zadaniami z Git-a GitHub - dgkanatsios/CKAD-exercises: A set of exercises to prepare for Certified Kubernetes Application Developer exam by Cloud Native Computing Foundation. Wszystko co tylko się da rób przy użyciu Imperative Commands. Po przerobieniu 5 powyższych punktów powinieneś być w stanie recytować większość komend lepiej niż wierszyki w przedszkolu, a resztę komend przynajmniej będziesz kojarzył. Ogólnie, gdyby twoi rodzice wiedzieli o co tu chodzi to byliby z Ciebie dumni. Zadania z tego punktu możesz rozwiązywać lokalnie u siebie na maszynie przy Uzyciu np. „minikube” lub [Interactive Tutorial - Creating a Cluster | Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/)
+- [ ] Zrób 3 rundy z zadaniami z Git-a GitHub - https://github.com/dgkanatsios/CKAD-exercises. Wszystko co tylko się da rób przy użyciu Imperative Commands. Po przerobieniu 5 powyższych punktów powinieneś być w stanie recytować większość komend lepiej niż wierszyki w przedszkolu, a resztę komend przynajmniej będziesz kojarzył. Ogólnie, gdyby twoi rodzice wiedzieli o co tu chodzi to byliby z Ciebie dumni. Zadania z tego punktu możesz rozwiązywać lokalnie u siebie na maszynie przy Uzyciu np. „minikube” lub [Interactive Tutorial - Creating a Cluster | Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/)
 - [ ] Teraz czas na przerobienie Lightning Labs i Mock Exams z punktu 2. Nie martw się jak za pierwszym razem nie będziesz w stanie wszystkiego rozwiązać, śmiało podejrzyj odpowiedzi, ZROZUM, dlaczego takie jest rozwiązanie i powtórz ćwiczenie. Przerób te dwa działy kilka razy, aż będziesz znał odpowiedzi na pamięć, na egzaminie pojawią się zadania o podobnej treści. Ważne, żebyś kojarzył jak rozwiązać dany problem. 7. 
 - [ ] Po zakupie egzaminu CKAD Kubernetes otrzymasz dwie sesje „Killer SH”. Po zrobieniu punktów 1-6, tydzień przed egzaminem włącz pierwszy symulator egzaminu, najlepiej na weekend. Po zakończonej sesji otrzymasz dostęp do rozwiązań zadań. Sesja jest aktywna tylko 36h, wykorzystaj ten czas, aby zrobić kilka sesji po 2h z tymi zadaniami. Jak w punkcie powyżej, naucz się tych zadań i ich rozwiązań na tyle ile dasz radę. 8. 
 - [ ] Egzamin najlepiej ustawić na poniedziałek. W weekend przed egzaminem włącz drugi „Killer SH” i powtórz kroki z przed weekendu. Pomiędzy tymi weekendami warto przejść zadania z punktów 1 – 6 aby utrwalić „Imperative commands”
@@ -268,3 +268,4 @@ Both the above commands have their own challenges. While one of it cannot accept
 
 [[40 A quick note on editing Pods and Deployments]]
 
+#kubeconfig [[136 KubeConfig]]

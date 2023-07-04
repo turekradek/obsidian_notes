@@ -1,2 +1,2 @@
 [[def kube-apiserver]]
-[[132 Authentication]]
+[[133 Authentication, Authorization and admission control]]

@@ -1,4 +1,4 @@
-[[132 Authentication]]
+[[133 Authentication, Authorization and admission control]]
 --basic-auth-file=user=detail.csv
 
 ```kube-apiserver.service

@@ -16,7 +16,8 @@ kubectl list users~~
 - [ ] identity services
 
 user-details.csv
-| static password file | static token file |
+| static password file | static token file | 
+| - | - | 
 |-|-|
 | password123,user1,u001||
 |password123,user2,u002||
