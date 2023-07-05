@@ -9,7 +9,7 @@ helm search repo joomla
 How many `helm` repositories are added in the `controlplane` node?
 Run the command: `helm repo list`
 ---
-Install `drupal` helm chart from the `bitnami` repository. Release name should be `bravo`.  Chart name should be `bitnami/drupal`. **Note:** Ignore the state of the application now.
+7. Install `drupal` helm chart from the `bitnami` repository. Release name should be `bravo`.  Chart name should be `bitnami/drupal`. **Note:** Ignore the state of the application now.
 
 Run the command: `helm install bravo bitnami/drupal` and after that run the `helm list` command to verify it's installation.
 ---
@@ -35,7 +35,7 @@ Inspect the file `values.yaml` and make changes so that 2 replicas of the webs
 `https://github.com/bitnami/charts/tree/master/bitnami/apache/#installing-the-chart`
 
 
-nstall the `apache` from the downloaded `helm` package.  
+install the `apache` from the downloaded `helm` package.  
 Release name: `mywebapp` **Note:** Do make changes accordingly so that 2 replicas of the webserver are running and the `http` is exposed on nodeport `30080`. Make sure that the pods are in the running state.
 
  helm install release2 ./apache

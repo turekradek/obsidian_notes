@@ -1,4 +1,4 @@
-
+#VI #VIM #shortcutsyy
 ### Moving by Characters, Words and Tokens
 The basic keys for moving the cursor by one character are:
 -   **`h`** – move the cursor left

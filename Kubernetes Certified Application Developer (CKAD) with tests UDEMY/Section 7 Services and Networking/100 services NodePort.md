@@ -10,8 +10,9 @@ laptop 192.168.2.10 > node (192.168.1.2) > node web (10.244.0.0) > pod (10.244.0
 
 ## services types
 - [ ] nodeport         on the wall of node  30008 (30000-32767)> service > 80 (port) > 80 (target port) > pod 
-				 | - - * --|
-	            |         |
+				|---- * ----|
+				|           |
+				|-----------|
 - [ ] ClusterIP inside
 			|-----------|
            |     *     |
@@ -31,23 +32,22 @@ laptop 192.168.2.10 > node (192.168.1.2) > node web (10.244.0.0) > pod (10.244.0
 
 
 
+      
+apiVerion: v1
+kind: Sevice
+metadata:
+    name: myapp-service
+spec:
+    type: NodePort
+    ports:
+      - targetPort: 80   # port on pod
+        port: 80         # port on service 
+        nodePort: 30008  # on the wall of node  range od default addresses is 30000 - 32767
+    **selector: # this part is from pod-definition.yml from labels:
+        app: myapp
+        type: front-end** 
 
-      ```
-        apiVerion: v1
-        kind: Sevice
-        metadata:
-            name: myapp-service
-        spec:
-            type: NodePort
-            ports:
-              - targetPort: 80   # port on pod
-                port: 80         # port on service 
-                nodePort: 30008  # on the wall of node 
-            **selector: # this part is from pod-definition.yml from labels:
-                app: myapp
-                type: front-end** 
-               
-      ```
+clusterIp 10.106.1.12:80 this is ip of the service
 
 >pod-definition.yml
 
@@ -76,15 +76,3 @@ laptop 192.168.2.10 > node (192.168.1.2) > node web (10.244.0.0) > pod (10.244.0
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-![[service_nodeport2.png]]

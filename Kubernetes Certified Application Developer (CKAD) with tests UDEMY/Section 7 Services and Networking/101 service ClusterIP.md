@@ -1,11 +1,14 @@
 ## Services - ClusterIP
 #SERVICE #CLUSTEIP
-| front-end | 10.244.0.3 |10.244.0.2 | 10.244.0.4|
-| -- | -- | -- | -- |
-|  |back-end||  |
-| back-end|10.244.0.7|10.244.0.5|10.244.0.8|
-|   | redis |||
+
+
+| front-end | 10.244.0.3  |10.244.0.2  |10.244.0.4 |
+| - | - | - | - |
+| |back-end | back-end |
+| back-end | 10.244.0.7|10.244.0.5 | 10.244.0.8
+| | redis| redis | 
 | redis |10.244.0.6|10.244.0.9|10.244.0.10|
+
 
 ```service_def_clusterIP
 apiVersion: v1

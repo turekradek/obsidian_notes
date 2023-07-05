@@ -1,4 +1,14 @@
 
+- [ ] Identify the name of the Operating system installed
+	- [ ] cat /etc/os-release
 - [ ] kubernetes cluster
 - [ ] kubectl 
+- [ ] packages installation
+	- [ ] wget https://get.helm.sh/helm-v3.9.3-linux-amd64.tar.gz
+	- [ ] tar xvf helm-v3.9.3-linux-amd64.tar.gz
+	- [ ] sudo mv linux-amd64/helm /usr/local/bin
+	- [ ] rm helm-v3.9.3-linux-amd64.tar.gz
+	- [ ] rm -rf linux-amd64
+	- [ ] helm version
+		- [ ] version.BuildInfo{Version:"v3.9.3", GitCommit:"414ff28d4029ae8c8b05d62aa06c7fe3dee2bc58", GitTreeState:"clean", GoVersion:"go1.17.13"}
 - [ ] sudo snap install helm --classic

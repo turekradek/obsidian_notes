@@ -2,4 +2,4 @@
 
 ```
 
-[[100 services]]
+[[100 services NodePort]]

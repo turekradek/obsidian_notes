@@ -63,8 +63,8 @@ metadata:
 data: 
   key: {{ .Values.passwordEncoded }}
 ```
-
-```values.yaml
+## this is where the variables are stored 
+```values_yaml
 image: wordpress:4.8-apache
 storage: 20Gi
 passwordEncoded: asdgfuaepoiufgbaepr
@@ -72,7 +72,7 @@ passwordEncoded: asdgfuaepoiufgbaepr
 
 This way anyone who wants to deploy this application can customize their deployment by simply changing the values from the single file called Values dot yaml.
 
-Helm Charts = values.yaml + templates/resources deployment service secrets pvc + Charts.yaml 
+# Helm Charts = values.yaml + templates/resources deployment service secrets pvc + Charts.yaml 
 ```Charts.yaml
 apiVersion: v2
 name: Wordpress
@@ -103,9 +103,12 @@ Repository Artifact HUB
 
 > helm repo list
 
+Bitnami Helm Charts
+
 ## to install helm chart
 
-helm install [release-name]  [chart-name]    
+> helm install [release-name]  [chart-name]    
+
 > helm install release-1 bitnami/wordpress
 
 > helm install release-2 bitnami/wordpress
@@ -114,7 +117,7 @@ helm install [release-name]  [chart-name]
 
 helm list
 helm uninstall my-release
-heml pull --untar bitnami/wordpress
+helm pull --untar bitnami/wordpress
 ls wordpress
 >helm install release-4 ./wordpress
 
