@@ -1,9 +1,9 @@
-- [ ] INGRESS COTROLLER
-- [ ] INGRESS RESOURCES
+- [x] INGRESS COTROLLER
+- [x] INGRESS RESOURCES
 
 ## INGRESS CONTROLLER 
-- [ ] GCP HTTP(S) lOAD bALANCER
-- [ ] N
+- [ ] GCP HTTP(S) LOAD BALANCER
+- [ ] NGNIX
 - [ ] CONTOUR
 - [ ] HAPROXY
 - [ ] TRAEFIK
@@ -18,6 +18,27 @@
 |Rule 1| Rule 2 | Rule 3 | Rule 4 |
 | POD | POD | POD | POD|
 www.my-online-store.com
+
+ingress
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+	name: ingress-watch
+spec:
+	**backend:
+		serviceName: watch-service
+		servicePort: 80
+
+ingress
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+	name: ingress-wear
+spec:
+	**backend:
+		serviceName: wear-service
+		servicePort: 80
+	
 
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -35,15 +56,8 @@ spec:
 		  **backend:
 			serviceName: watch-service
 			servicePort: 80**
-ingress
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-	name: nginx-configuration
-spec:
-	**backend:
-		serviceName: wear-service
-		servicePort: 80**
+
+
 
 ---
 
@@ -56,16 +70,16 @@ spec:
 	- host: wear.my-online-store.com
 	  http:
 		paths:
-		  **backend:
+		**- backend:
 			serviceName: wear-service
 			servicePort: 80**
 		
-	  - host: watch.my-online-store.com
-	    http:
-		    paths:
-			-  backend:
-				serviceName: watch-service
-				servicePort: 80
+	- host: watch.my-online-store.com
+	  http:
+		paths:
+		**- backend:
+			serviceName: watch-service
+			servicePort: 80**
 
 ingress
 apiVersion: extensions/v1beta1

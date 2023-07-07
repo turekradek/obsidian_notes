@@ -26,7 +26,7 @@ spec
 			matchLabels:                                                                      matchLabels: 
 				name: api-pod                                                                   name: api-pod 
 		   ####################
-           namespaceSelector:           # DEFAULT NAMESPACE IS prod                     -   namespaceSelector:      - MEADN ANOTHER BLOCK 
+           namespaceSelector:           # DEFAULT NAMESPACE IS prod                     -   namespaceSelector:      - MEANS ANOTHER BLOCK 
 	           matchLabels:              # BUT THIS CODE ALLOWD FOR staging TOO                matchLabels:           namespace WITHOUT - MEANS
 		           name: staging         # BUT ONLY FOR API Pod                                    name: staging         podSelector &&  namespace
 		   #####################
@@ -71,7 +71,7 @@ spec
 	  ports: 
 	  -   protocol: TCP 
 	      port: 3306   
-	egress:
+	egress: # TO  SOMEWHERE
 	- to:
 	  - ipBlock:
 		    cidr: 192.168.5.10/32

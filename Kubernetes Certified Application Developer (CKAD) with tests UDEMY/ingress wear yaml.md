@@ -1,4 +1,4 @@
-[[104 Ingress Networking]]
+[[105 Ingress Networking]]
 
 ```ingress_wear
 apiVersion: extensions/v1beta1

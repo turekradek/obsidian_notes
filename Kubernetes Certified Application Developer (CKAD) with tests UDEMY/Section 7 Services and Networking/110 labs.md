@@ -133,5 +133,33 @@ CheckCompleteIncomplete
 -   Configure correct backend port for /watch service
 
 ```
---- apiVersion: networking.k8s.io/v1 kind: Ingress metadata: name: ingress-wear-watch namespace: app-space annotations: nginx.ingress.kubernetes.io/rewrite-target: / nginx.ingress.kubernetes.io/ssl-redirect: "false" spec: rules: - http: paths: - path: /wear pathType: Prefix backend: service: name: wear-service port: number: 8080 - path: /watch pathType: Prefix backend: service: name: video-service port: number: 8080
+apiVersion: networking.k8s.io/v1 
+kind: Ingress 
+metadata: 
+	name: ingress-wear-watch 
+	namespace: app-space 
+	annotations: 
+		nginx.ingress.kubernetes.io/rewrite-target: / 
+		nginx.ingress.kubernetes.io/ssl-redirect: "false" 
+spec: 
+	rules: 
+		- http: 
+			paths: 
+			path: /wear 
+			pathType: Prefix 
+			backend: 
+				service: 
+					name: wear-service 
+					port: 
+						number: 8080 
+		- http:
+			path: /watch
+			pathType: Prefix 
+			backend: 
+				service: 
+					name: video-service 
+					port: 
+						number: 8080
+
 ```
+> k create ingress test-ingress --namespace=app-space --rule="/wear=wear-service:80" --rule="/watch=wath-service:80" --dry-run=client -o yaml > new.yaml

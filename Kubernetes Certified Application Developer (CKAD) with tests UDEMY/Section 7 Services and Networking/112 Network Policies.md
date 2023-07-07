@@ -1,31 +1,44 @@
 
 
+           USER   . 
+          |       |
+ INGRESS  |      | ENGRESS
+          |      |
+          .      
+         80    <---------------                      <---------------
+        W E B                        5000 A P I                                 D B
+               --------------- >                     --------------- >  3306      
+               ENGRESS   INGRESS                    EGRESS       INGRESS
+
+
+
+
 Ingress & Egress
 
-1.  Ingress 80 <-- Website
+1.  Ingress 80    <-- Website
     
-2.  Egress 5000 --> Website
+2.  Egress  5000  --> Website
     
-3.  Ingress 5000 <-- API
+3.  Ingress 5000  <-- API
     
-4.  Egress 3306 --> API
+4.  Egress  3306  --> API
     
-5.  Ingress 3306 <-- DBase
+5.  Ingress 3306  <-- DBase
     
 
 ## 
 
 Network Security
 
-Network Policy
-
-
+Network Policy          POD 
+     |                   | 
+matchLabels     ==     labels
 <span style="color:green">PodSelector</span>
    <span style="color:green">         matchLabels:</span>
 	   <span style="color:green">       role: db</span>
 
 
-DBPod
+DBPod LABELS FROM POD 
 
 ```
 labels:

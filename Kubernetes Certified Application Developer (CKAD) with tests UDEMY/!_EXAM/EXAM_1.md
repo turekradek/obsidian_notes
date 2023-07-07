@@ -13,6 +13,7 @@ export now="--force --grace-period 0"
 K8s imperative commands won't help in a few cases and you will have to write/edit YAMLs. E.g. For questions related to Persistent Volumes or Network Policies etc. I used following VIM settings to convert tabs to spaces and other syntax related help
 
 vim ~/.vimrc
+set number
 set nu
 set expandtab
 set shiftwidth=2
@@ -41,7 +42,7 @@ Przykłady Imperative commands: Kubectl Reference Docs (kubernetes.io) https://k
 - [x] 1. Jeśli jesteś zielony w temacie warto zacząć od Kubernetes for the Absolute Beginners - Hands-on (udemy.com)
 - [x] 2. Nastepnie przejść szkolenie Kubernetes Certified Application Developer (CKAD) with Tests (udemy.com) w trakcie szkolenia na bieżąco robić zadania załączone do tematu Udemy Labs - Certified Kubernetes Application Developer - KodeKloud. Póki co pomijamy Lightning Labs i Mock Exams!!!
 - [x] 3. W dziale „Update for Sep 2021 Changes” przerobić tematy wraz z zadaniami na KodeKloud
-	- [x] Define, build, and modify container images [[128 Updates for Sep 2021 Change]] [[129 Define, build and modify container images]]
+	- [x] Define, build, and modify container images [[128 Updates for Sep 2021 Change]] [[129 Define, build and modify container images]] 
 	- [x] Deployment Strategy – Blue Green [[161 Deployument Strategy - Blue Green]]
 	- [x] Deployment Strategy - Canary [[162 Deployment Strategy Canary]]
 	- [x] Helm Introduction [[166 Install Helm]]
@@ -58,14 +59,14 @@ Przykłady Imperative commands: Kubectl Reference Docs (kubernetes.io) https://k
  - [x] Na egzaminie „okno” w którym pracujesz jest dość małe, możesz mieć tylko laptopa dlatego warto znać dokumentację i wiedzieć gdzie co jest opisane i skąd możesz skopiować poszczególne komponenty pliku YAML jak np. volumen, secret, configmap używane w deploymentach lub podach itd. • 
  - [ ] Podczas egzaminu możesz korzystać z dokumentacji która zaczyna się adresem: https://kubernetes.io/docs - czyli to też jest dostępne [Kubectl Reference Docs (kubernetes.io)](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-ingress-em-)
  - [ ] musisz bardzo dobrze rozumieć “Networking”!!!
-	 - [ ] Jak działa Service, Network policy, Ingress, Egress ➢ 
-	 - [ ] Jak tworzyć Network Policy, używać odpowiednich „labelów”, w odpoiwednie miesjca wpisywać dane porty ➢ 
-	 - [ ] Naucz się na pamięć komendy jak stworzyć Ingress/Egress!!! ➢ 
-	 - [ ] Posiadaj dobre zrozumienie jak pody łączą się przez Service, Network Policy ➢ 
+	 - [x] Jak działa Service, Network policy, Ingress, Egress ➢ [[105 Ingress Networking]] [[106 Article Ingress]] [[107 Labs Ingress Networking - 1]] [[112 Network Policies]]
+	 - [x] Jak tworzyć Network Policy, używać odpowiednich „labelów”, w odpoiwednie miesjca wpisywać dane porty ➢ 
+	 - [x] Naucz się na pamięć komendy jak stworzyć Ingress/Egress!!! ➢ 
+	 - [x] Posiadaj dobre zrozumienie jak pody łączą się przez Service, Network Policy ➢ 
 	 - [ ] Jak odpytywać Pody zapytaniami curl/wget – sprawdzanie czy jest połączenie z podem
-- [ ] Na moim egzaminie 3-4 zadania to był „troubleshooting” związany z powyższymi tematami. Ważne żebyś rozumiał jak ustawiać port, target-port, jaki label gdzie powinien być użyty. Jest kilka zadań w tym temacie, zapamiętaj je! • 
-- [ ] Pamiętaj o komendach „kubectl --help” na dole jest informacja jak zbudować przykładowe zapytanie przy uzyciu imperative commands – przykład „kubectl create --help” lub „ kubectl run --help” • 
-- [ ] Gdy edytujesz jakiś komponent np. pod lub deployment w pliku YAML to używaj komendy „apply” i na końcu dodaj --force • 
+- [x] Na moim egzaminie 3-4 zadania to był „troubleshooting” związany z powyższymi tematami. Ważne żebyś rozumiał jak ustawiać port, target-port, jaki label gdzie powinien być użyty. Jest kilka zadań w tym temacie, zapamiętaj je! • 
+- [x] Pamiętaj o komendach „kubectl --help” na dole jest informacja jak zbudować przykładowe zapytanie przy uzyciu imperative commands – przykład „kubectl create --help” lub „ kubectl run --help” • 
+- [x] Gdy edytujesz jakiś komponent np. pod lub deployment w pliku YAML to używaj komendy „apply” i na końcu dodaj --force • 
 - [x] Po rozpoczęciu egzaminu warto dodać skróty: ➢ #vi #VIM 
 	- [x] export do="--dry-run=client -o yaml" # tworzenie pliku YAML bez tworzenia komponentu ➢ 
 	- [x] export now="--force --grace-period 0" # usunięcie natychmiast danego komponentu • 
@@ -73,19 +74,19 @@ Przykłady Imperative commands: Kubectl Reference Docs (kubernetes.io) https://k
 	- [x] set tabstop=2 ➢ 
 	- [x] set expandtab ➢ 
 	- [x] set shiftwidth
-- [ ] Przydatne skróty przy pracy w edytorze „vi”: ➢ 
+- [x] Przydatne skróty przy pracy w edytorze „vi”: ➢ 
 	- [x] Zaznaczanie kilku linii – shift + V (strzałkami zaznaczasz kolejne linie) ➢ 
 	- [x] Po zaznaczeniu linii shift + . – przesunięcie tekstu o pola wpisane w pliku ~/.vimrc ➢ 
 	- [x] Po zaznaczeniu kilku linii „delete” aby usunąć zaznaczony tekst 
-	- [ ] 10 +G – przejdź do danej linii 
-	- [ ] Shift + G – przejdź do ostatniej lini
-- [ ] Jeśli zatrzymasz się na jakimś zadaniu na egzaminie „oflaguj” je i przejdź do kolejnego. Jeśli zostanie czas możesz do niego wrócić. • 
+	- [x] 10 +G – przejdź do danej linii 
+	- [x] Shift + G – przejdź do ostatniej lini
+- [x] Jeśli zatrzymasz się na jakimś zadaniu na egzaminie „oflaguj” je i przejdź do kolejnego. Jeśli zostanie czas możesz do niego wrócić. • 
 - [ ] Pamiętaj aby zawsze przed rozpoczęciem nowego zadania na egzaminie wybrać odpowiedni Node i context Kubernetesa. Komenda do wybrania contextu będzie w treści zadania (ja nie musiałem zmieniać Node-a). Po rozwiązaniu zadania należy wrócić na domyślny Node – będzie to opisane przed rozpoczęciem egzaminu w pliku readme. Zawsze możesz do niego wrócić. • 
-- [ ] Zapisywanie jakichkolwiek plików jest możliwe tylko w lokalizacji student – na 99% tak to się nazywało. W każdym razie coś związanego z egzaminem. Na pewno jest to niestandardowa lokalizacja i wyróżnia się od lokalizacji systemowych. • 
-- [ ] Korzystaj na egzaminie z już gotowych plików YAML, jeśli jest takowy stworzony do danego zadania. • 
-- [ ] Pamiętaj, aby pracować w odpowiednim namespace, inaczej zadanie nie będzie zaliczone! • 
-- [ ] Na egzaminie jest 16 zadań, aby zdać należy zdobyć 66%. • 
-- [ ] 2h czasu to naprawdę mało na 16 zadań. Bez znajomości imperative commands nie ma opcji zdania egzaminu.
+- [x] Zapisywanie jakichkolwiek plików jest możliwe tylko w lokalizacji student – na 99% tak to się nazywało. W każdym razie coś związanego z egzaminem. Na pewno jest to niestandardowa lokalizacja i wyróżnia się od lokalizacji systemowych. • 
+- [x] Korzystaj na egzaminie z już gotowych plików YAML, jeśli jest takowy stworzony do danego zadania. • 
+- [x] Pamiętaj, aby pracować w odpowiednim namespace, inaczej zadanie nie będzie zaliczone! • 
+- [x] Na egzaminie jest 16 zadań, aby zdać należy zdobyć 66%. • 
+- [x] 2h czasu to naprawdę mało na 16 zadań. Bez znajomości imperative commands nie ma opcji zdania egzaminu.
 - [ ] Dodatkowe linki:
 	- [ ] https://medium.com/@harioverhere/ckad-certified-kubernetes-application-developer-my-journey-3afb0901014
 	- [ ] https://github.com/twajr/ckad-prep-notes#current-progress
@@ -281,6 +282,6 @@ k exec -h [[53 Security Contexts]]
 # SERVICES AND NETWORKING 
 - services [[100 services NodePort]]
 - service ClusterIp [[101 service ClusterIP]]
-- Network Policies [[111 Network Policies]]
-- Ingress [[104 Ingress Networking]]
+- Network Policies [[112 Network Policies]]
+- Ingress [[105 Ingress Networking]]
 - Engress 

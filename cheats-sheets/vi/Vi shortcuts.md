@@ -14,11 +14,13 @@ For example, if you run **`5j`** the cursor moves down 5 lines.
 -   **`W`** – move to the start of the next token
 -   **`e`** – move to the end of a word
 -   **`E`** – move to the end of a token
+
 ### Moving by Lines
 -   **`0`** (zero) – jump to the beginning of the line
 -   **`$`** – jump to the end of the line
 -   **`^`** – jump to the first (non-blank) character of the line
 -   **`#G`** / **`#gg`** / **`:#`** – move to a specified line number (replace **#** with the line number)
+
 ### Moving by Screens
 The following commands are used as a quick way to move within the text
 without scrolling.
@@ -33,8 +35,6 @@ without scrolling.
 -   **`H`** – move to the top of the screen (H=high)
 -   **`M`** – move to the middle of the screen (M=middle)
 -   **`L`** – move to the bottom of the screen (L=low)
-
-
 
 
 
@@ -66,18 +66,6 @@ without scrolling.
 -   **`#dd`** – cut the specified number of lines
 -   **`p`** – paste after the cursor
 -   **`P`** – paste before the cursor
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
