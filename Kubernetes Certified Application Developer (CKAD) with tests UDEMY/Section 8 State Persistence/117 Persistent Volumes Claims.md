@@ -1,4 +1,4 @@
-|PV 1 | PV 2 | PV 3|
+V 1 | PV 2 | PV 3|
 |-|-|-|
 | PVC 1|PVC 2 | PVC3|
 

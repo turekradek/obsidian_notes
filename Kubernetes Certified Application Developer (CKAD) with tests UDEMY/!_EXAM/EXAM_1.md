@@ -49,7 +49,18 @@ Przykłady Imperative commands: Kubectl Reference Docs (kubernetes.io) https://k
 	- [x] Helm Concepts [[169 Labs - Helm Concepts]]
 - [x] 4. Po skończeniu szkolenia i przerobieniu zadań z punktu 2 i 3, ponownie przejść te same zadania na kodekloud. Utrwalisz sobie komendy i ogólną wiedzę na temat poszczególnych komponentów. Póki co pomijamy Lightning Labs i Mock Exams!!!
 - [ ] 5. Zrób 3 rundy z zadaniami z Git-a GitHub - https://github.com/dgkanatsios/CKAD-exercises. Wszystko co tylko się da rób przy użyciu Imperative Commands. Po przerobieniu 5 powyższych punktów powinieneś być w stanie recytować większość komend lepiej niż wierszyki w przedszkolu, a resztę komend przynajmniej będziesz kojarzył. Ogólnie, gdyby twoi rodzice wiedzieli o co tu chodzi to byliby z Ciebie dumni. Zadania z tego punktu możesz rozwiązywać lokalnie u siebie na maszynie przy Uzyciu np. „minikube” lub [Interactive Tutorial - Creating a Cluster | Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/)
-- [ ] 6. Teraz czas na przerobienie Lightning Labs i Mock Exams z punktu 2. Nie martw się jak za pierwszym razem nie będziesz w stanie wszystkiego rozwiązać, śmiało podejrzyj odpowiedzi, ZROZUM, dlaczego takie jest rozwiązanie i powtórz ćwiczenie. Przerób te dwa działy kilka razy, aż będziesz znał odpowiedzi na pamięć, na egzaminie pojawią się zadania o podobnej treści. Ważne, żebyś kojarzył jak rozwiązać dany problem. 
+- [ ] 6. Teraz czas na przerobienie Lightning Labs i Mock Exams z punktu 2
+	- [ ] LIGHTNING LABS
+		- [ ] [[175 Lightning Lab -1]] 
+			- [ ] [[176 Solution Lightning Lab1]]  
+		- [ ] [[177 Lighyning Lab - 2]] 
+			- [ ] [[178  Solution Lighyning Lab - 2]]
+	- [ ] Mock Exams 
+		- [ ] [[179 Mock Exam - 1]]
+			- [ ] [[180 Solution Mock Exam - 1]]
+		- [ ] [[181  Mock Exam - 2]] 
+			- [ ] [[182 Solution Mock Exam - 2]]
+	Nie martw się jak za pierwszym razem nie będziesz w stanie wszystkiego rozwiązać, śmiało podejrzyj odpowiedzi, ZROZUM, dlaczego takie jest rozwiązanie i powtórz ćwiczenie. Przerób te dwa działy kilka razy, aż będziesz znał odpowiedzi na pamięć, na egzaminie pojawią się zadania o podobnej treści. Ważne, żebyś kojarzył jak rozwiązać dany problem. 
 - [ ] 7. Po zakupie egzaminu CKAD Kubernetes otrzymasz dwie sesje „Killer SH”. Po zrobieniu punktów 1-6, tydzień przed egzaminem włącz pierwszy symulator egzaminu, najlepiej na weekend. Po zakończonej sesji otrzymasz dostęp do rozwiązań zadań. Sesja jest aktywna tylko 36h, wykorzystaj ten czas, aby zrobić kilka sesji po 2h z tymi zadaniami. Jak w punkcie powyżej, naucz się tych zadań i ich rozwiązań na tyle ile dasz radę. 
 - [ ] 8. Egzamin najlepiej ustawić na poniedziałek. W weekend przed egzaminem włącz drugi „Killer SH” i powtórz kroki z przed weekendu. Pomiędzy tymi weekendami warto przejść zadania z punktów 1 – 6 aby utrwalić „Imperative commands”
 

@@ -1,3 +1,5 @@
+#config #configmap #context #configview
+
 I would like to use the `dev-user` to access `test-cluster-1`. Set the current context to the right one so I can do that.
 
 Once the right context is identified, use the `kubectl config use-context` command.
