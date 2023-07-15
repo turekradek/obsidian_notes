@@ -23,7 +23,7 @@ set expandtab
 set shiftwidth=2
 More setup suggestions are in the tips section.
 
- # Question1 | Namespaces
+# Question1 | Namespaces
 Task weight: 1%
 
  
@@ -54,7 +54,7 @@ sun            Active   76m
 venus          Active   76m
  
 
- # Question2 | Pods
+# Question2 | Pods
 Task weight: 2%
 
  
