@@ -865,7 +865,7 @@ COPY --from=0 /src/bin/app app
 ENV SUN_CIPHER_ID=5b9c1065-e39d-4a43-a04a-e59bcea3e03f
 CMD ["./app"]
  
-
+sudo docker build -t registry.killer.sh:5000/sun-cipher:latest -t registry.killer.sh:5000/sun-cipher:v1-docker .
 2.
 
 Then we build the image using Docker:
