@@ -315,7 +315,7 @@ TEST SUITE: None
 If we would also need to set a value on a deeper level, for example image.debug, we could run:
 
 helm -n mercury install internal-issue-report-apache bitnami/apache \
-  --set replicaCount=2 \
+  --set replicaCount=2 
   --set image.debug=true
 Install done, let's verify what we did:
 
@@ -1335,15 +1335,15 @@ Then use one IP to test the configuration:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   161  100   161    0     0  80500      0 --:--:-- --:--:-- --:--:--  157k
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Web Moon Webpage</title>
-</head>
-<body>
+!DOCTYPE html
+html lang="en"
+head
+    meta charset="UTF-8"
+    titleWeb Moon Webpage/title
+/head
+body
 This is some great content.
-</body>
+/body
 For debugging or further checks we could find out more about the Pods volume mounts:
 
 ➜ k -n moon describe pod web-moon-c77655cc-dc8v4 | grep -A2 Mounts:
@@ -1360,9 +1360,7 @@ And check the mounted folder content:
 /usr/share/nginx/html/index.html
 Here it was important that the file will have the name index.html and not the original one web-moon.html which is controlled through the ConfigMap data key.
 
- 
 
- 
 
 # Question16 | Logging sidecar
 Task weight: 6%
@@ -1548,7 +1546,7 @@ pod/manager-api-deployment-dbcc6657d-k98xn   1/1     Running   0          98m
 pod/test-init-container-5db7c99857-htx6b     1/1     Running   0          2m19s
 
 NAME                      TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
-service/manager-api-svc   ClusterIP   10.15.241.159   <none>        4444/TCP   99m
+service/manager-api-svc   ClusterIP   10.15.241.159   none        4444/TCP   99m
 
 NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/manager-api-deployment   4/4     4            4           98m
@@ -1567,10 +1565,10 @@ Ok, let's try to connect to one pod directly:
 k -n mars get pod -o wide # get cluster IP
 ➜ k -n mars run tmp --restart=Never --rm -i --image=nginx:alpine -- curl -m 5 10.0.1.14
  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
+!DOCTYPE html
+html
+head
+titleWelcome to nginx!/title
 ...
 The Pods itself seem to work. Let's investigate the Service a bit:
 
@@ -1579,7 +1577,7 @@ Name:              manager-api-svc
 Namespace:         mars
 Labels:            app=manager-api-svc
 ...
-Endpoints:         <none>
+Endpoints:         none
 ...
 Endpoint inspection is also possible using:
 
@@ -1620,10 +1618,10 @@ Endpoints - Good! Now we try connecting again:
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   612  100   612    0     0    99k      0 --:--:-- --:--:-- --:--:--   99k
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
+!DOCTYPE html
+html
+head
+titleWelcome to nginx!/title
 ...
 And we fixed it. Good to know is how to be able to use Kubernetes DNS resolution from a different Namespace. Not necessary, but we could spin up the temporary Pod in default Namespace:
 
@@ -1638,10 +1636,10 @@ pod default/tmp terminated (Error)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   612  100   612    0     0  68000      0 --:--:-- --:--:-- --:--:-- 68000
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
+!DOCTYPE html
+html
+head
+title Welcome to nginx!/title
 Short manager-api-svc.mars or long manager-api-svc.mars.svc.cluster.local work.
 
  
@@ -1667,7 +1665,7 @@ NAME                                      READY   STATUS    RESTARTS   AGE
 pod/jupiter-crew-deploy-8cdf99bc9-klwqt   1/1     Running   0          34m
 
 NAME                       TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
-service/jupiter-crew-svc   ClusterIP   10.100.254.66   <none>        8080/TCP   34m
+service/jupiter-crew-svc   ClusterIP   10.100.254.66   none        8080/TCP   34m
 ...
 (Optional) Next we check if the ClusterIP Service actually works:
 
@@ -1705,26 +1703,26 @@ We check if the Service type was updated:
 
 ➜ k -n jupiter get svc
 NAME               TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
-jupiter-crew-svc   NodePort   10.3.245.70   <none>        8080:30100/TCP   3m52s
+jupiter-crew-svc   NodePort   10.3.245.70   none        8080:30100/TCP   3m52s
 (Optional) And we confirm that the service is still reachable internally:
 
 ➜ k -n jupiter run tmp --restart=Never --rm -i --image=nginx:alpine -- curl -m 5 jupiter-crew-svc:8080
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-<html><body><h1>It works!</h1></body></html>
+htmlbodyh1It works!/h1/body/html
 Nice. A NodePort Service kind of lies on top of a ClusterIP one, making the ClusterIP Service reachable on the Node IPs (internal and external). Next we get the internal IPs of all nodes to check the connectivity:
 
 ➜ k get nodes -o wide
 NAME                    STATUS   ROLES          AGE   VERSION   INTERNAL-IP      ...
 cluster1-controlplane1  Ready    control-plane  18h   v1.27.1   192.168.100.11   ...
-cluster1-node1          Ready    <none>         18h   v1.27.1   192.168.100.12   ...
+cluster1-node1          Ready    none         18h   v1.27.1   192.168.100.12   ...
 On which nodes is the Service reachable?
 
 ➜ curl 192.168.100.11:30100
-<html><body><h1>It works!</h1></body></html>
+htmlbodyh1It works!/h1/body/html
 
 ➜ curl 192.168.100.12:30100
-<html><body><h1>It works!</h1></body></html>
+htmlbodyh1It works!/h1/body/html
 On both, even the controlplane. On which node is the Pod running?
 
 ➜ k -n jupiter get pod jupiter-crew-deploy-8cdf99bc9-klwqt -o yaml | grep nodeName
@@ -1768,17 +1766,15 @@ pod/frontend-789cbdc677-rjt5r   1/1     Running   0          57s
 pod/frontend-789cbdc677-xgf5n   1/1     Running   0          57s
 
 NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
-service/api        ClusterIP   10.3.255.137   <none>        2222/TCP   37s
-service/frontend   ClusterIP   10.3.255.135   <none>        80/TCP     57s
+service/api        ClusterIP   10.3.255.137   none        2222/TCP   37s
+service/frontend   ClusterIP   10.3.255.135   none        80/TCP     57s
 ...
 (Optional) This is not necessary but we could check if the Services are working inside the cluster:
 
 ➜ k -n venus run tmp --restart=Never --rm -i --image=busybox -i -- wget -O- frontend:80
 Connecting to frontend:80 (10.3.245.9:80)
 <!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
+Welcome to nginx!
 ...
 
 ➜ k -n venus run tmp --restart=Never --rm --image=busybox -i -- wget -O- api:2222
@@ -1789,11 +1785,11 @@ Then we use any frontend Pod and check if it can reach external names and the ap
 ➜ k -n venus exec frontend-789cbdc677-c9v8h -- wget -O- www.google.com
 Connecting to www.google.com (216.58.205.227:80)
 -                    100% |********************************| 12955  0:00:00 ETA
-<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="en"><head>
+!doctype htmlhtml itemscope="" itemtype="http://schema.org/WebPage" lang="en"head
 ...
 
 ➜ k -n venus exec frontend-789cbdc677-c9v8h -- wget -O- api:2222     
-<html><body><h1>It works!</h1></body></html>
+It works!
 Connecting to api:2222 (10.3.255.137:2222)
 -                    100% |********************************|    45  0:00:00 ETA
 ...
@@ -1862,7 +1858,7 @@ command terminated with exit code 1
 Internal connection to api work as before:
 
 ➜ k -n venus exec frontend-789cbdc677-c9v8h -- wget -O- api:2222 
-<html><body><h1>It works!</h1></body></html>
+It works!
 Connecting to api:2222 (10.3.255.137:2222)
 -                    100% |********************************|    45  0:00:00 ETA
  
@@ -2045,10 +2041,7 @@ Next we use nginx:alpine and curl to check if one Pod is accessible on port 80:
 ➜ k run tmp --restart=Never --rm -i --image=nginx:alpine -- curl -m 5 10.12.2.15
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
+Welcome to nginx!
 ...
 We could also use busybox and wget for this:
 
@@ -2058,9 +2051,7 @@ writing to stdout
 -                    100% |********************************|   612  0:00:00 ETA
 written to stdout
 <!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
+Welcome to nginx!
 Now that we're sure the Deployment works we can continue with altering the provided yaml:
 
 cp /opt/course/p1/project-23-api.yaml /opt/course/p1/project-23-api-new.yaml
