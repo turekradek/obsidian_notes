@@ -1571,7 +1571,6 @@ head
 titleWelcome to nginx!/title
 ...
 The Pods itself seem to work. Let's investigate the Service a bit:
-
 ➜ k -n mars describe service manager-api-svc
 Name:              manager-api-svc
 Namespace:         mars
@@ -1643,7 +1642,7 @@ title Welcome to nginx!/title
 Short manager-api-svc.mars or long manager-api-svc.mars.svc.cluster.local work.
 
  
-
+80
  
 
 # Question19 | Service ClusterIP->NodePort
