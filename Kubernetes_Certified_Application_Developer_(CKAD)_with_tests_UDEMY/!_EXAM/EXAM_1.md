@@ -296,3 +296,8 @@ k exec -h [[53 Security Contexts]]
 - Network Policies [[112 Network Policies]]
 - Ingress [[105 Ingress Networking]]
 - Engress 
+
+----
+# Examples questions
+[linuxdatahub](https://linuxdatahub.com/ckad-exam-questions-for-practice/)
+[levelup.gitconnected](https://levelup.gitconnected.com/kubernetes-ckad-hands-on-challenge-12-various-env-variables-463945052721)
