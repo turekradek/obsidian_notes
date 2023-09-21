@@ -75,6 +75,7 @@ vim 2.yaml
 Change the container name in 2.yaml to pod1-container:
 
 ## 2.yaml
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -91,6 +92,7 @@ spec:
   restartPolicy: Always
 status: {}
 Then run:
+```
 
 ➜ k create -f 2.yaml
 pod/pod1 created
@@ -141,6 +143,7 @@ vim /opt/course/3/job.yaml
 Make the required changes in the yaml:
 
 ## /opt/course/3/job.yaml
+```
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -166,6 +169,7 @@ spec:
         resources: {}
       restartPolicy: Never
 status: {}
+```
 Then to create it:
 
 k -f /opt/course/3/job.yaml create # namespace already set in yaml
@@ -368,6 +372,7 @@ k -n neptune get secrets -oyaml | grep annotations -A 1 # shows secrets with fir
 If a Secret belongs to a ServiceAccont, it'll have the annotation kubernetes.io/service-account.name. Here the Secret we're looking for is neptune-secret-1.
 
 ➜ k -n neptune get secret neptune-secret-1 -o yaml
+```
 apiVersion: v1
 data:
 ...
@@ -383,6 +388,7 @@ Data
 token:      eyJhbGciOiJSUzI1NiIsImtpZCI6Im5aZFdqZDJ2aGNvQ3BqWHZOR1g1b3pIcm5JZ0hHNWxTZkwzQnFaaTFad2MifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJuZXB0dW5lIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6Im5lcHR1bmUtc2EtdjItdG9rZW4tZnE5MmoiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoibmVwdHVuZS1zYS12MiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjY2YmRjNjM2LTJlYzMtNDJhZC04OGE1LWFhYzFlZjZlOTZlNSIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpuZXB0dW5lOm5lcHR1bmUtc2EtdjIifQ.VYgboM4CTd0pdCJ78wjUwmtalh-2vsKjANyPsh-6guEwOtWEq5Fbw5ZHPtvAdrLlPzpOHEbAe4eUM95BRGWbYIdwjuN95J0D4RNFkVUt48twoakRV7h-aPuwsQXHhZZzy4yimFHG9Ufmsk5Yr4RVcG6n137y-FH08K8zZjIPAsKDqNBQtxg-lZvwVMi6viIhrrzAQs0MBOV82OJYGy2o-WQVc0UUanCf94Y3gT0YTiqQvczYMs6nz9ut-XgwitrBY6Tj9BgPprA9k_j5qEx_LUUZUpPAiEN7OzdkJsI8ctth10lypI1AeFr43t6ALyrQoBM39abDfq3FksR-oc_WMw
 ca.crt:     1066 bytes
 namespace:  7 bytes
+```
 Copy the token (part under token:) and paste it using vim.
 
 vim /opt/course/5/token
@@ -412,6 +418,7 @@ vim 6.yaml
 Search for a readiness-probe example on https://kubernetes.io/docs, then copy and alter the relevant section for the task:
 
 ## 6.yaml
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -439,6 +446,7 @@ spec:
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
+```
 Then:
 
 k -f 6.yaml create
@@ -496,6 +504,7 @@ vim 7_webserver-sat-003.yaml
 Change the Namespace to neptune, also remove the status: section, the token volume, the token volumeMount and the nodeName, else the new Pod won't start. The final file could look as clean like this:
 
 ## 7_webserver-sat-003.yaml
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -511,6 +520,7 @@ spec:
     imagePullPolicy: IfNotPresent
     name: webserver-sat
   restartPolicy: Always
+```
 Then we execute:
 
 k -n neptune create -f 7_webserver-sat-003.yaml
@@ -609,6 +619,7 @@ vim /opt/course/9/holy-api-deployment.yaml
 Now copy/use a Deployment example yaml and put the Pod's metadata: and spec: into the Deployment's template: section:
 
 ## /opt/course/9/holy-api-deployment.yaml
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -653,6 +664,7 @@ spec:
         name: cache-volume2
       - emptyDir: {}
         name: cache-volume3
+```
 To indent multiple lines using vim you should set the shiftwidth using :set shiftwidth=2. Then mark multiple lines using Shift v and the up/down keys.
 
 To then indent the marked lines press  or  and to repeat the action press .
@@ -696,6 +708,7 @@ Answer
 k -n pluto run project-plt-6cc-api --image=nginx:1.17.3-alpine --labels project=plt-6cc-api
 This will create the requested Pod. In yaml it would look like this:
 
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -711,6 +724,7 @@ spec:
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
+```
 Next we create the service:
 
 k -n pluto expose pod -h # help
@@ -718,6 +732,7 @@ k -n pluto expose pod -h # help
 k -n pluto expose pod project-plt-6cc-api --name project-plt-6cc-svc --port 3333 --target-port 80
 Expose will create a yaml where everything is already set for our case and no need to change anything:
 
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -735,6 +750,7 @@ spec:
     project: plt-6cc-api      # beautiful
 status:
   loadBalancer: {}
+```
 We could also use create service but then we would need to change the yaml afterwards:
 
 k -n pluto create service -h # help
@@ -750,6 +766,7 @@ service/project-plt-6cc-svc   ClusterIP   10.31.241.234   none        3333/TCP  
 Does the Service has one Endpoint?
 
 ➜ k -n pluto describe svc project-plt-6cc-svc
+```
 Name:              project-plt-6cc-svc
 Namespace:         pluto
 Labels:            project=plt-6cc-api
@@ -762,13 +779,15 @@ TargetPort:        80/TCP
 Endpoints:         10.28.2.32:80 
 Session Affinity:  None
 Events:            none
+```
 Or even shorter:
 
 ➜ k -n pluto get ep
+```
 NAME                  ENDPOINTS       AGE
 project-plt-6cc-svc   10.28.2.32:80   84m
 Yes, endpoint there! Finally we check the connection using a temporary Pod:
-
+```
 ➜ k run tmp --restart=Never --rm --image=nginx:alpine -i -- curl http://project-plt-6cc-svc.pluto:3333
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -853,6 +872,7 @@ Registry: place where we can push/pull Images to/from
 First we need to change the Dockerfile to:
 
 ## build container stage 1
+```
 FROM docker.io/library/golang:1.15.15-alpine3.14
 WORKDIR /src
 COPY . .
@@ -864,6 +884,7 @@ COPY --from=0 /src/bin/app app
 ## CHANGE NEXT LINE
 ENV SUN_CIPHER_ID=5b9c1065-e39d-4a43-a04a-e59bcea3e03f
 CMD ["./app"]
+```
  
 sudo docker build -t registry.killer.sh:5000/sun-cipher:latest -t registry.killer.sh:5000/sun-cipher:v1-docker .
 2.
@@ -873,28 +894,37 @@ Then we build the image using Docker:
 ➜ cd /opt/course/11/image
 
 ➜ sudo docker build -t registry.killer.sh:5000/sun-cipher:latest -t registry.killer.sh:5000/sun-cipher:v1-docker .
+```
 ...
 Successfully built 409fde3c5bf9
 Successfully tagged registry.killer.sh:5000/sun-cipher:latest
 Successfully tagged registry.killer.sh:5000/sun-cipher:v1-docker
+```
 
 ➜ sudo docker image ls
+```
 REPOSITORY                           TAG         IMAGE ID       CREATED              SIZE
 registry.killer.sh:5000/sun-cipher   latest      409fde3c5bf9   24 seconds ago       7.76MB
 registry.killer.sh:5000/sun-cipher   v1-docker   409fde3c5bf9   24 seconds ago       7.76MB
+```
 ...
 
 ➜ sudo docker push registry.killer.sh:5000/sun-cipher:latest
+```
 The push refers to repository [registry.killer.sh:5000/sun-cipher]
 c947fb5eba52: Pushed 
 33e8713114f8: Pushed 
 latest: digest: sha256:d216b4136a5b232b738698e826e7d12fccba9921d163b63777be23572250f23d size: 739
+```
+
 
 ➜ sudo docker push registry.killer.sh:5000/sun-cipher:v1-docker
+```
 The push refers to repository [registry.killer.sh:5000/sun-cipher]
 c947fb5eba52: Layer already exists 
 33e8713114f8: Layer already exists 
 v1-docker: digest: sha256:d216b4136a5b232b738698e826e7d12fccba9921d163b63777be23572250f23d size: 739
+```
 There we go, built and pushed.
 
  
@@ -916,7 +946,8 @@ REPOSITORY                          TAG         IMAGE ID      CREATED        SIZ
 registry.killer.sh:5000/sun-cipher  v1-podman   38adc53bd928  2 minutes ago  8.03 MB
 ...
 
-➜ podman push registry.killer.sh:5000/sun-cipher:v1-podman
+> podman push registry.killer.sh:5000/sun-cipher:v1-podman
+
 Getting image source signatures
 Copying blob 4d0d60db9eb6 done  
 Copying blob 33e8713114f8 done  
@@ -947,6 +978,7 @@ f8199cba792f  registry.killer.sh:5000/sun-cipher:v1-podman  ./app       ...
 ➜ podman ps > /opt/course/11/containers
 
 ➜ podman logs sun-cipher
+```
 2077/03/13 06:50:34 random number for 5b9c1065-e39d-4a43-a04a-e59bcea3e03f is 8081
 2077/03/13 06:50:34 random number for 5b9c1065-e39d-4a43-a04a-e59bcea3e03f is 7887
 2077/03/13 06:50:34 random number for 5b9c1065-e39d-4a43-a04a-e59bcea3e03f is 1847
@@ -961,6 +993,7 @@ f8199cba792f  registry.killer.sh:5000/sun-cipher:v1-podman  ./app       ...
 2077/03/13 06:50:34 random number for 5b9c1065-e39d-4a43-a04a-e59bcea3e03f is 8511
 2077/03/13 06:50:44 random number for 5b9c1065-e39d-4a43-a04a-e59bcea3e03f is 8162
 2077/03/13 06:50:54 random number for 5b9c1065-e39d-4a43-a04a-e59bcea3e03f is 5089
+```
 
 ➜ podman logs sun-cipher > /opt/course/11/logs
 This is looking not too bad at all. Our container skills are back in town!
@@ -987,6 +1020,7 @@ vim 12_pv.yaml
 Find an example from https://kubernetes.io/docs and alter it:
 
 ## 12_pv.yaml
+```
 kind: PersistentVolume
 apiVersion: v1
 metadata:
@@ -998,6 +1032,7 @@ spec:
   - ReadWriteOnce
  hostPath:
   path: "/Volumes/Data"
+```
 Then create it:
 
 k -f 12_pv.yaml create
@@ -1007,6 +1042,7 @@ vim 12_pvc.yaml
 Find an example from https://kubernetes.io/docs and alter it:
 
 ## 12_pvc.yaml
+```
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -1018,6 +1054,7 @@ spec:
   resources:
     requests:
      storage: 2Gi
+```
 Then create:
 
 k -f 12_pvc.yaml create
@@ -1037,6 +1074,7 @@ vim 12_dep.yaml
 Alter the yaml to mount the volume:
 
 ## 12_dep.yaml
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1067,6 +1105,8 @@ spec:
         volumeMounts:                               # add
         - name: data                                # add
           mountPath: /tmp/project-data              # add
+```
+          
 k -f 12_dep.yaml create
 We can confirm it's mounting correctly:
 
@@ -1094,17 +1134,20 @@ vim 13_sc.yaml
 Head to https://kubernetes.io/docs, search for "storageclass" and alter the example code to this:
 
 ## 13_sc.yaml
+```
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: moon-retain
 provisioner: moon-retainer
 reclaimPolicy: Retain
+```
 k create -f 13_sc.yaml
 Now the same for the PersistentVolumeClaim, head to the docs, copy an example and transform it into:
 
 vim 13_pvc.yaml
 ## 13_pvc.yaml
+```
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -1117,6 +1160,7 @@ spec:
     requests:
       storage: 3Gi              # size
   storageClassName: moon-retain # uses our new storage class
+```
 k -f 13_pvc.yaml create
 Next we check the status of the PVC :
 
@@ -1157,6 +1201,7 @@ k -n moon create secret generic -h # help
 k -n moon create secret generic secret1 --from-literal user=test --from-literal pass=pwd
 The last command would generate this yaml:
 
+```
 apiVersion: v1
 data:
   pass: cHdk
@@ -1166,6 +1211,7 @@ metadata:
   creationTimestamp: null
   name: secret1
   namespace: moon
+```
 Next we create the second Secret from the given location, making sure it'll be created in Namespace moon:
 
 k -n moon -f /opt/course/14/secret2.yaml create
@@ -1181,6 +1227,7 @@ vim /opt/course/14/secret-handler-new.yaml
 Add the following to the yaml:
 
 ## /opt/course/14/secret-handler-new.yaml
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -1232,6 +1279,7 @@ spec:
         secretKeyRef:                 # add
           name: secret1               # add
           key: pass                   # add
+```
 There is also the possibility to import all keys from a Secret as env variables at once, though the env variable names will then be the same as in the Secret, which doesn't work for the requirements here:
 
   containers:
@@ -1298,6 +1346,7 @@ k -n moon create configmap -h # help
 k -n moon create configmap configmap-web-moon-html --from-file=index.html=/opt/course/15/web-moon.html # important to set the index.html key
 This should create a ConfigMap with yaml like:
 
+```
 apiVersion: v1
 data:
   index.html: |     # notice the key index.html, this will be the filename when mounted
@@ -1316,6 +1365,7 @@ metadata:
   creationTimestamp: null
   name: configmap-web-moon-html
   namespace: moon
+```
 After waiting a bit or deleting/recreating (k -n moon rollout restart deploy web-moon) the Pods we should see:
 
 ➜ k -n moon get pod
@@ -1383,6 +1433,7 @@ vim /opt/course/16/cleaner-new.yaml
 Add a sidecar container which outputs the log file to stdout:
 
 # /opt/course/16/cleaner-new.yaml
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1422,6 +1473,7 @@ spec:
         volumeMounts:                                                   # add
         - name: logs                                                    # add
           mountPath: /var/log/cleaner                                   # add
+```
 Then apply the changes and check the logs of the sidecar:
 
 k -f /opt/course/16/cleaner-new.yaml apply
@@ -1474,6 +1526,7 @@ vim 17_test-init-container.yaml
 Add the InitContainer:
 
 # 17_test-init-container.yaml
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1507,6 +1560,7 @@ spec:
           mountPath: /usr/share/nginx/html
         ports:
         - containerPort: 80
+```
 Then we create the Deployment:
 
 k -f 17_test-init-container.yaml create
@@ -1571,7 +1625,6 @@ head
 titleWelcome to nginx!/title
 ...
 The Pods itself seem to work. Let's investigate the Service a bit:
-
 ➜ k -n mars describe service manager-api-svc
 Name:              manager-api-svc
 Namespace:         mars
@@ -1586,6 +1639,7 @@ No endpoints - No good. We check the Service yaml:
 
 k -n mars edit service manager-api-svc
 # k -n mars edit service manager-api-svc
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -1607,6 +1661,7 @@ spec:
     id: manager-api-pod
   sessionAffinity: None
   type: ClusterIP
+```
 Though Pods are usually never created without a Deployment or ReplicaSet, Services always select for Pods directly. This gives great flexibility because Pods could be created through various customized ways. After saving the new selector we check the Service again for endpoints:
 
 ➜ k -n mars get ep
@@ -1643,7 +1698,7 @@ title Welcome to nginx!/title
 Short manager-api-svc.mars or long manager-api-svc.mars.svc.cluster.local work.
 
  
-
+80
  
 
 # Question19 | Service ClusterIP->NodePort
@@ -1678,6 +1733,7 @@ The Service is working great. Next we change the Service type to NodePort and se
 
 k -n jupiter edit service jupiter-crew-svc
 # k -n jupiter edit service jupiter-crew-svc
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -1699,6 +1755,7 @@ spec:
   type: NodePort    # change type
 status:
   loadBalancer: {}
+```
 We check if the Service type was updated:
 
 ➜ k -n jupiter get svc
@@ -1799,6 +1856,7 @@ vim 20_np1.yaml
 Now we head to https://kubernetes.io/docs, search for NetworkPolicy, copy the example code and adjust it to:
 
 # 20_np1.yaml
+```
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -1820,6 +1878,7 @@ spec:
       protocol: UDP
     - port: 53                # allow DNS TCP
       protocol: TCP
+```
 Notice that we specify two egress rules in the yaml above. If we specify multiple egress rules then these are connected using a logical OR. So in the example above we do:
 
 allow outgoing traffic if
@@ -1828,7 +1887,8 @@ Let's have a look at example code which wouldn't work in our case:
 
 # this example does not work in our case
 ...
-  egress:
+  ```
+egress:
   - to:                     # 1st AND ONLY egress rule
     - podSelector:            # allow egress only to pods with api label
         matchLabels:
@@ -1838,6 +1898,7 @@ Let's have a look at example code which wouldn't work in our case:
       protocol: UDP
     - port: 53                # allow DNS TCP
       protocol: TCP
+```
 In the yaml above we only specify one egress rule with two selectors. It can be translated into:
 
 allow outgoing traffic if
@@ -1887,6 +1948,7 @@ vim 21.yaml
 Now make the required changes using vim:
 
 # 21.yaml
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -1917,6 +1979,7 @@ spec:
           requests:             # add
             memory: 20Mi        # add
 status: {}
+```
 Then create the yaml:
 
 k create -f 21.yaml # namespace already set in yaml
@@ -2140,6 +2203,7 @@ vim p2_sunny.yaml
 Then alter its yaml to include the requirements:
 
 # p2_sunny.yaml
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -2166,6 +2230,7 @@ spec:
         name: nginx
         resources: {}
 status: {}
+```
 Now create the yaml and confirm it's running:
 
 ➜ k create -f p2_sunny.yaml 
@@ -2188,6 +2253,7 @@ k -n sun expose deployment sunny --name sun-srv --port 9999 --target-port 80
 Using expose instead of kubectl create service clusterip is faster because it already sets the correct selector-labels. The previous command would produce this yaml:
 
 # k -n sun expose deployment sunny --name sun-srv --port 9999 --target-port 80
+```
 apiVersion: v1
 kind: Service
 metadata:
@@ -2204,6 +2270,7 @@ spec:
     app: sunny          # selector is important
 status:
   loadBalancer: {}
+```
 Let's test the Service using wget from a temporary Pod:
 
 ➜ k run tmp --restart=Never --rm -i --image=nginx:alpine -- curl -m 5 sun-srv.sun:9999
@@ -2321,6 +2388,7 @@ To continue we check the Deployment yaml for some misconfiguration:
 
 k -n earth edit deploy earth-3cc-web
 # k -n earth edit deploy earth-3cc-web
+```
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -2349,6 +2417,7 @@ spec:
           tcpSocket:
             port: 82                # this port doesn't seem to be right, should be 80
           timeoutSeconds: 1
+```
 ...
 We change the readiness-probe port, save and check the Pods:
 
