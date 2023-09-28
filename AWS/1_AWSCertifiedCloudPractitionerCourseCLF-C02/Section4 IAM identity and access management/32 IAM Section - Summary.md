@@ -1,0 +1,9 @@
+- [ ] Users:
+- [ ] Groups: Contains users only
+- [ ] Policies: JSON document that outlines permissions for users or groups
+- [ ] Roles: for EC2 instances or AWS services
+- [ ] Security: MFA + Password Policy
+- [ ] AWS CLI:
+- [ ] AWS SDK:
+- [ ] Access keys: access AWS using the CLI or SDK
+- [ ] Audit:

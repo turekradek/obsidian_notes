@@ -27,7 +27,7 @@ Users or Groups can be assigned JSON documents caled policies
 				"cloudwatch:GetMetricStatistics",
 				"cloudwatch:Describe*",
 			]
-			"Resource": "*""*"
+			"Resource": "*"
 		}
 	]
 }
