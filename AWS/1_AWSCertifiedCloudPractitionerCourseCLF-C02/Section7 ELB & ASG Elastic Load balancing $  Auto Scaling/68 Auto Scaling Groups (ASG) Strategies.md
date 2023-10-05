@@ -1,0 +1,15 @@
+- manual scaling: update the size of an ASG manually
+- dynamic scaling: respond to changing demand
+	- simple / step scaling
+		- when a CloudWatch alarm is triggered ( example CPU > 70 %) then add 2 units
+		- when a CloudWatch alarm is triggered ( example CPU < 70 %) then remove 1
+	- target tracking scaling
+		- example: I want the average ASG VPU to stay at around 40%
+	- scheduled scaling
+		- anticipate a scaling based on known usage patterns
+		- Example: increase the min capacity to 10 at 5 pm on Fridays
+### Auto scaling Groups - scalin stategies
+- Predictive Scaling
+	- Uses Machine Learning to predict future traffic ahead of time
+	- Automatically provisions the right number of EC2 instances in advance
+- Useful when your load has predictable time-based patterns 
