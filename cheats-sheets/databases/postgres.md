@@ -105,3 +105,53 @@ To change the owner of an existing database later, you can use the following com
 postgres=# alter database dbname owner to myuser;
 ALTER DATABASE
 ```
+
+```POSTGRES_HELP
+\? COMMAND
+```
+
+**Create a role group in PostgreSQL:**
+> CREATE ROLE groupname;
+
+**Add a user to this group:** First, create a user:
+> CREATE USER username WITH PASSWORD 'password';
+
+Then add the user to the group:
+>GRANT groupname TO username;
+
+**Add permissions for this group:** 
+a. **Permission to create new tables:** `sql GRANT CREATE ON SCHEMA public TO groupname;`  
+b. **Permission to add records to created tables:** `sql GRANT INSERT ON ALL TABLES IN SCHEMA public TO groupname;`
+
+**In PostgreSQL, you can revoke the `DELETE` privilege from a group to prevent it from deleting tables. Here’s an example:**
+> REVOKE DELETE ON ALL TABLES IN SCHEMA public FROM groupname;
+
+
+To change the user in PostgreSQL, you can use the `SET ROLE` command. Here’s an example:
+> SET ROLE username;
+
+> SELECT CURRENT_USER;
+> 
+
+## SQL SCRIPT
+
+```
+-- Create a new role
+CREATE ROLE groupname;
+
+-- Create a new user and add it to the role
+CREATE USER username WITH PASSWORD 'password';
+GRANT groupname TO username;
+
+-- Grant permissions to the role
+GRANT CREATE ON SCHEMA public TO groupname;
+GRANT INSERT ON ALL TABLES IN SCHEMA public TO groupname;
+
+-- Revoke delete permission from the role
+REVOKE DELETE ON ALL TABLES IN SCHEMA public FROM groupname;
+
+```
+Please replace `groupname`, `username`, and `password` with your actual group name, user name, and password.
+
+You can run this script using the `psql` command-line tool like so:
+psql -U USERNAME -d NAMEDATABASE -a -f myscript.sql
