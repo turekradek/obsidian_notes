@@ -86,12 +86,12 @@ Przykłady Imperative commands: Kubectl Reference Docs (kubernetes.io) https://k
 	- [x] set expandtab ➢ 
 	- [x] set shiftwidth
 - [x] Przydatne skróty przy pracy w edytorze „vi”: ➢ 
-	- [x] Zaznaczanie kilku linii – shift + V (strzałkami zaznaczasz kolejne linie) ➢ 
-	- [x] Po zaznaczeniu linii shift + . – przesunięcie tekstu o pola wpisane w pliku ~/.vimrc ➢ 
-	- [x] Po zaznaczeniu kilku linii „delete” aby usunąć zaznaczony tekst 
-	- [x] 10 +G – przejdź do danej linii 
-	- [x] Shift + G – przejdź do ostatniej lini
-- [x] Jeśli zatrzymasz się na jakimś zadaniu na egzaminie „oflaguj” je i przejdź do kolejnego. Jeśli zostanie czas możesz do niego wrócić. • 
+	- [ ] Zaznaczanie kilku linii – shift + V (strzałkami zaznaczasz kolejne linie) ➢ 
+	- [ ] Po zaznaczeniu linii shift + . – przesunięcie tekstu o pola wpisane w pliku ~/.vimrc ➢ 
+	- [ ] Po zaznaczeniu kilku linii „delete” aby usunąć zaznaczony tekst 
+	- [ ] 10 +G – przejdź do danej linii 
+	- [ ] Shift + G – przejdź do ostatniej lini
+- [ ] Jeśli zatrzymasz się na jakimś zadaniu na egzaminie „oflaguj” je i przejdź do kolejnego. Jeśli zostanie czas możesz do niego wrócić. • 
 - [ ] Pamiętaj aby zawsze przed rozpoczęciem nowego zadania na egzaminie wybrać odpowiedni Node i context Kubernetesa. Komenda do wybrania contextu będzie w treści zadania (ja nie musiałem zmieniać Node-a). Po rozwiązaniu zadania należy wrócić na domyślny Node – będzie to opisane przed rozpoczęciem egzaminu w pliku readme. Zawsze możesz do niego wrócić. • 
 - [x] Zapisywanie jakichkolwiek plików jest możliwe tylko w lokalizacji student – na 99% tak to się nazywało. W każdym razie coś związanego z egzaminem. Na pewno jest to niestandardowa lokalizacja i wyróżnia się od lokalizacji systemowych. • 
 - [x] Korzystaj na egzaminie z już gotowych plików YAML, jeśli jest takowy stworzony do danego zadania. • 

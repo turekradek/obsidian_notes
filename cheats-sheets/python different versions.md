@@ -18,8 +18,10 @@ sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev \
 
 Download [Python](https://www.python.org/) source code using the following command from python official site. You can also download the latest version in place of the specified below.
 
+https://www.python.org/ftp/python/
 cd /opt
 sudo wget https://www.python.org/ftp/python/3.8.12/Python-3.8.12.tgz
+sudo wget https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz
 
 Then extract the downloaded source archive file
 
@@ -56,7 +58,7 @@ sudo rm -f Python-3.8.12.tgz
 Extract the Python archive, and remember to change the version number if you downloaded a newer one.
 
 - [ ] wget https://www.python.org/ftp/python/3.8.15/Python-3.8.15.tar.xz
-
+	https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tar.xz
 - [ ] tar -xf Python-3.8.{version}.tar.xz
 
 Now install the dependencies required to install Python 3.8.
