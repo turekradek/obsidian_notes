@@ -155,3 +155,146 @@ Please replace `groupname`, `username`, and `password` with your actual grou
 
 You can run this script using the `psql` command-line tool like so:
 psql -U USERNAME -d NAMEDATABASE -a -f myscript.sql
+
+> ALTER USER postgres WITH PASSWORD 'radek';
+
+> psql -U postgres -d postgres -h localhost
+
+password: radek
+
+> psql -U postgres -d postgres -h localhost -f script.sql
+
+\d table           - shows columns
+
+```LIST_USERS
+SELECT usename FROM pg_user;
+  usename
+-----------
+ postgres
+ usertest1
+(2 rows)
+```
+
+```list_groups
+postgres=# select groname from pg_group;
+          groname
+---------------------------
+ pg_database_owner
+ pg_read_all_data
+ pg_write_all_data
+ pg_monitor
+ pg_read_all_settings
+ pg_read_all_stats
+ pg_stat_scan_tables
+ pg_read_server_files
+ pg_write_server_files
+ pg_execute_server_program
+ pg_signal_backend
+(11 rows)
+```
+
+## postgres groups permissions
+#postgres
+
+To grant read-only permissions to a specific group in PostgreSQL, you can use the `GRANT` statement to assign the `SELECT` privilege to the group for a particular table or schema. Here's how to do it:
+
+1. Connect to your PostgreSQL database using the `psql` command-line tool:
+    
+    bashCopy code
+    
+    `psql -U your_username -d your_database`
+    
+    Replace `your_username` with your PostgreSQL username and `your_database` with the name of your database.
+    
+2. Grant read-only permission to a group for a specific table:
+    
+    > GRANT SELECT ON table_name TO group_name;
+    
+    > GRANT SELECT ON mytable TO mygroup;`
+    
+3. If you want to grant read-only permissions for all tables within a schema, you can use the following command:
+
+    > GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO group_name;
+
+    > GRANT SELECT ON ALL TABLES IN SCHEMA public TO mygroup;
+    
+4. After executing the `GRANT` statement, the group will have read-only permissions on the specified table(s) or schema.
+    
+> SET ROLE username;
+
+switch back to previous user
+> RESET ROLE
+
+Show available schemas in postgres
+```available_schemas
+select nspname from pg_catalog.pg_namespace;
+      nspname
+--------------------
+ pg_toast
+ pg_catalog
+ public
+ information_schema
+(4 rows)
+```
+
+## description of schema in PostgreSQL
+
+> SELECT 
+    catalog_name,
+    schema_name,
+    schema_owner,
+    default_character_set_catalog,
+    default_character_set_schema,
+    default_character_set_name,
+    sql_path
+FROM 
+    information_schema.schemata;
+
+## To get the privileges of all groups in PostgreSQL
+
+> SELECT rolname, rolsuper, rolcreaterole, rolcreatedb, rolcanlogin FROM pg_roles;
+
+## To get the privileges of a specific group
+
+> SELECT rolname, rolsuper, rolcreaterole, rolcreatedb, rolcanlogin 
+  FROM pg_roles 
+  WHERE rolname = 'your_group_name';
+
+
+|Nr| Action | SQL CODE | notes |
+| - | - | - |
+| 1. |**Create a group** named ‘GROUPRADEK’: |CREATE ROLE GROUPRADEK NOLOGIN; | |
+|2. |**Give permissions to read and write data from tables**: | GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO GROUPRADEK; |
+|3. |**Give permissions to create databases and tables**: | GRANT CREATE ON DATABASE your_database TO GROUPRADEK; GRANT CREATE ON SCHEMA public TO GROUPRADEK; |
+|4. |**Give permissions to delete tables**: | GRANT DELETE ON ALL TABLES IN SCHEMA public TO GROUPRADEK;|
+|5. | **Give permissions to delete databases**:|ALTER ROLE GROUPRADEK CREATEDB; |
+|6. | **Give permissions to create new users**:| ALTER ROLE GROUPRADEK CREATEROLE; |
+|7. | **Add user ‘radek1’ to this group**: | GRANT GROUPRADEK TO radek1; |
+|8. | **Revoke the privilege of deleting databases**:| ALTER ROLE GROUPRADEK NOCREATEDB;|
+|9. | **Revoke the privilege of creating new users**:|ALTER ROLE GROUPRADEK NOCREATEROLE; |
+|10. | | |
+
+In PostgreSQL, a role can have the following attributes which you can use for a newly created group:
+
+1. **LOGIN / NOLOGIN**: This determines whether a role is allowed to log in. A role with the LOGIN attribute can enter a database. Roles without this attribute are useful for managing database privileges.
+    
+2. **SUPERUSER / NOSUPERUSER**: The SUPERUSER attribute determines whether the role bypasses all permission checks, except the right to log in.
+    
+3. **CREATEDB / NOCREATEDB**: Roles with the CREATEDB attribute can create new databases.
+    
+4. **CREATEROLE / NOCREATEROLE**: Roles with the CREATEROLE attribute can create new roles.
+    
+5. **INHERIT / NOINHERIT**: A role with the INHERIT attribute automatically has the privileges of roles it is a member of. If NOINHERIT is specified, then a role does not automatically inherit privileges of roles it is a member of.
+    
+6. **REPLICATION / NOREPLICATION**: The REPLICATION attribute determines whether a role can initiate streaming replication or put the system in and out of backup mode.
+    
+7. **BYPASSRLS / NOBYPASSRLS**: The BYPASSRLS attribute determines whether a role bypasses row-level security policies.
+    
+
+You can set these attributes while creating a group (role) or alter them later using the `CREATE ROLE` and `ALTER ROLE` commands respectively.
+
+
+
+
+
+
