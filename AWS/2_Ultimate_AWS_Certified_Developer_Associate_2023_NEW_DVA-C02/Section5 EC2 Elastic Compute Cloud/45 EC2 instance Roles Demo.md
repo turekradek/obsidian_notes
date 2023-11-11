@@ -1,2 +1,3 @@
 - instance in terminal
+- [[[AWS_Certified_Developer_Slides_v27.pdf]]]
 - 
