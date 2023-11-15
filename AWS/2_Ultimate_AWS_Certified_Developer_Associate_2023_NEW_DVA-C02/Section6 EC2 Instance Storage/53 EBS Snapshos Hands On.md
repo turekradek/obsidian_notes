@@ -1,8 +1,0 @@
-- [ ] Volumes
-	- [ ] Actions
-		- [ ] Description - Demo snaphots
-			- [ ] Elastic Block Store 
-				- [ ] Snapshots 
-				- [ ] Copy Snapchots 
-	- [ ] Recreate volume from snaphots
-	- [ ] 

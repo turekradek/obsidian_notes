@@ -1,1 +1,0 @@
-EBS should be in the same location
