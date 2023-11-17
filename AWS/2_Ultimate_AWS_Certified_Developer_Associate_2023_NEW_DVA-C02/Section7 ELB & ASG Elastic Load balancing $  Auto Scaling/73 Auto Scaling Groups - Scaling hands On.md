@@ -26,3 +26,27 @@ Here are some additional tips for using Auto Scaling Groups:
 - Use a ready-to-use AMI to reduce the configuration time for your EC2 instances.
 - Enable detailed monitoring for ASG to get access to lower-level metrics.
 - Make sure that your metrics are being updated fast enough.
+|Topic|Description|
+|---|---|
+|SSL/TLS Certificates|Used to encrypt traffic between clients and load balancers.|
+|SNI (Server Name Indication)|Allows for multiple SSL certificates to be loaded onto one web server.|
+|AWS Certificate Manager (ACM)|Used to manage SSL certificates in AWS.|
+|Application Load Balancer (ALB)|Supports multiple listeners with multiple SSL certificates and uses SNI.|
+|Network Load Balancer (NLB)|Supports multiple listeners with multiple SSL certificates and uses SNI.|
+
+drive_spreadsheetExport to Sheets
+
+Here are the steps for loading multiple SSL certificates onto a load balancer:
+
+1. Create an ALB or NLB.
+2. Create a listener for each hostname that you want to serve.
+3. Upload the SSL certificate for each hostname to ACM.
+4. Attach the SSL certificate to the corresponding listener.
+5. Configure routing rules to send traffic to the correct target group based on the hostname.
+
+Here are some additional notes:
+
+- SSL certificates have an expiration date and must be renewed regularly.
+- Classic load balancers can only support one SSL certificate.
+- SNI is not supported by all clients.
+- SNI is required for ALB and NLB to load multiple SSL certificates.
