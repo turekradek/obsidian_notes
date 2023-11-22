@@ -4,3 +4,4 @@
 
 > scp -i instance1.pem kierowcy.txt ec2-user@51.20.133.174:~
 
+#SSH #awscopy
