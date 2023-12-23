@@ -1,0 +1,7 @@
+- In this lesson, we created an Azure SQL Database.
+- We used SQL authentication and provided a username and password.
+- We selected the basic tier and locally redundant storage.
+- We allowed public endpoint access and added our IP address to the firewall.
+- We used the query editor to run a simple query.
+- We recommended using Azure Data Studio or SQL Server Management Studio for better developer-friendly functionalities.
+- We pinned the database to our covid-reporting project dashboard.

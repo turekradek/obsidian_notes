@@ -1,0 +1,36 @@
+- [ ] data flow - df_transform_hostpital_addmision
+- [ ] dataset - ds_raw_hospital_admission
+
+- [ ] select transformation 
+	- [ ] remove url
+	- [ ] ranamae data to reported_date
+	- [ ] rename year_week to reported_year_week
+- [ ] lookup country transformation
+	- [ ] add source 
+		- [ ] use dataset -> ds_country_lookpu
+		- [ ] + lookup -> name Lookup Country
+			- [ ] lookup condition is -> country == country 
+- [ ] + select transformation 
+	- [ ] remove continent
+	- [ ] remove country
+- [ ] + conditional split
+	- [ ] output stream name = SplitDailyFromWeekly
+	- [ ] split condition
+		- [ ] stream names = Weekly
+			- [ ] conditions + (Visual expression builder) (Expression)
+				- [ ] indicator == 'Weekly new hospital admissions per 100k' || indicator == 'Weekly new ICU admissions per 100k'
+		- [ ] stream names = Daily 
+			- [ ] conditions = leave , not touch ( Rows that do not meet any condition will use this output stream)
+- [ ] upload file to lookup directory in file explorer 
+- [ ] add source = DimDateSource
+	- [ ] DataLakeStorageGen2
+		- [ ] delimiterText csv file
+		- [ ] dataset name = ds_dim_date_lookup
+			- [ ] filepath = lookup/(Direcotry)/dim_date.csv
+- [ ] Devided Column Transformation
+	- [ ] + Devide Column Transformation (lets transform data within this stream ) ( select lets reorder or add or remove fields within a stream )
+		- [ ] name = DeriveECDCYerWeek
+			- [ ] Column = choose column
+				- [ ] can be existing column or new one, choose new 'ecdc_year_week'
+				- [ ] expression = = year + -W' + (functions) lpad(week_of_year, 2, '0') (string to pad)
+- [ ] Aggregate Transformation

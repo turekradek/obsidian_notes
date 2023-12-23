@@ -37,7 +37,6 @@ without scrolling.
 -   **`L`** – move to the bottom of the screen (L=low)
 
 
-
 ## Inserting Text
 -   **`i`** – switch to insert mode before the cursor
 -   **`I`** – insert text at the beginning of the line
@@ -68,10 +67,6 @@ without scrolling.
 -   **`P`** – paste before the cursor
 
 
-
-
-
-
 ### Visual Commands
 Once you have selected the desired text in visual mode,
 you can use one of the visual commands to manipulate it.
@@ -83,12 +78,6 @@ Some of them include:
 -   **`U`** – change the market text to uppercase
 
 
-
-
-
-
-
-
 ## Search in File
 -   **`*`** – jump to the next instance of the current word
 -   **`#`** – jump to previous instance of the current word
@@ -98,7 +87,105 @@ Some of them include:
 -   **`N`** – repeat the search in the opposite direction
 
 
+  
+Sure. Here are the top 100 most useful Vim shortcuts, grouped into different sections:
 
+### Editing
+
+|Shortcut|Description|
+|---|---|
+|`i`|Enter insert mode|
+|`a`|Enter append mode|
+|`o`|Open a new line below|
+|`O`|Open a new line above|
+|`<CR>`|Insert a newline character and enter normal mode|
+|`^p`|Paste the contents of the previous register|
+|`^r`|Replace the previous command|
+|`.`|Repeat the previous command|
+|`J`|Join the previous two lines|
+|`C-_`|Delete the previous word|
+|`C-x C-k`|Delete the current line and append it to the register|
+|`C-y`|Yank the contents of the register|
+|`<Esc>`|Return to normal mode|
+|`hjkl`|Move the cursor up, down, left, and right|
+|`{,}`|Move to the beginning and end of the current sentence|
+|`[,]`|Move to the beginning and end of the current word|
+|`f,F`|Move forward and backward one character|
+|`t,T`|Move forward and backward to the next character that matches the current character|
+|`;,,`|Repeat the previous search|
+|`:s/old/new/`|Substitute the current word with `new`|
+|`:%s/old/new/g`|Substitute all occurrences of `old` with `new`|
+|`:g/old/p`|Print all occurrences of `old`|
+|`:%s/old/new/gc`|Substitute all occurrences of `old` with `new` and confirm each substitution|
+
+drive_spreadsheetExport to Sheets
+
+### Insert
+
+|Shortcut|Description|
+|---|---|
+|`a`|Append text after the cursor|
+|`i`|Insert text before the cursor|
+|`o`|Open a new line and insert text after it|
+|`O`|Open a new line and insert text before it|
+|`A`|Append text to the end of the line|
+|`I`|Insert text at the beginning of the line|
+|`R`|Insert text in replace mode|
+|`ESC`|Exit insert mode|
+|`:`|Enter command mode|
+
+drive_spreadsheetExport to Sheets
+
+### Search
+
+|Shortcut|Description|
+|---|---|
+|`/`|Begin a search|
+|`n`|Repeat the previous search|
+|`N`|Repeat the previous search in the opposite direction|
+|`*`|Search for the word under the cursor|
+|`?`|Search for the word under the cursor backward|
+|`g*`|Search for all occurrences of the current word|
+|`%s/old/new/g`|Substitute all occurrences of `old` with `new`|
+|`:nohlsearch`|Clear search highlighting|
+|`:set hlsearch`|Enable search highlighting|
+|`:set incsearch`|Enable incremental search|
+
+drive_spreadsheetExport to Sheets
+
+### Visual
+
+|Shortcut|Description|
+|---|---|
+|`v`|Enter visual mode|
+|`V`|Enter visual line mode|
+|`<CR>`|Toggle visual block mode|
+|`+,-`|Increase and decrease the size of the current visual selection|
+|`^`|Select the beginning of the current line|
+|`$`|Select the end of the current line|
+|`w,b,e,ge`|Select the current word, current word backward, current sentence, and current paragraph, respectively|
+|`J`|Join the selected lines|
+|`C-y`|Copy the selected text to the register|
+|`p`|Paste the contents of the register|
+|`dd`|Delete the selected lines|
+|`yy`|Yank the selected lines|
+|`u`|Undo the previous change|
+|`U`|Redo the previous change|
+|`<Esc>`|Exit visual mode|
+
+drive_spreadsheetExport to Sheets
+
+### Ex
+
+|Shortcut|Description|
+|---|---|
+|`:q`|Quit Vim|
+|`:wq`|Write and quit Vim|
+|`:w`|Write the current file|
+|`:e filename`|Edit the specified file|
+|`:set nu`|Enable line numbering|
+|`:set nonu`|Disable line numbering|
+|`:set autoindent`|Set|
 
 
 
