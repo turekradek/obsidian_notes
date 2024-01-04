@@ -50,3 +50,39 @@
 |Grant all privileges to a user on a view|GRANT ALL PRIVILEGES ON VIEW customer_orders TO my_user||
 |Revoke all privileges from a user on a view|REVOKE ALL PRIVILEGES ON VIEW customer_orders FROM my_user|
 
+
+How to create a group in PostgreSQL? In PostgreSQL, a group is essentially a role1. You can create a group using the CREATE ROLE command2. For example, to create a group named “mygroup”, you would use:
+
+SQL
+
+CREATE ROLE mygroup;
+AI-generated code. Review and use carefully. More info on FAQ.
+How to create a user in PostgreSQL? You can create a user in PostgreSQL using the CREATE USER command3. For example, to create a user named “myuser” with a password “mypassword”, you would use:
+
+SQL
+
+CREATE USER myuser WITH PASSWORD 'mypassword';
+AI-generated code. Review and use carefully. More info on FAQ.
+How to give permissions to a user in PostgreSQL? You can grant permissions to a user in PostgreSQL using the GRANT command4. For example, to grant all privileges on a database named “mydatabase” to a user named “myuser”, you would use:
+
+SQL
+
+GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
+AI-generated code. Review and use carefully. More info on FAQ.
+How to add a user to a group in PostgreSQL? You can add a user to a group (role) in PostgreSQL using the GRANT command5. For example, to add a user named “myuser” to a group named “mygroup”, you would use:
+
+SQL
+
+GRANT mygroup TO myuser;
+
+
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO postgresstgreadgrafana;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO postgresstgread;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO postgresstgwrite;
+
+-- Insert values into the id column
+UPDATE mytable SET id = 1 WHERE some_condition; -- Replace some_condition with your condition
+
+SELECT usename FROM pg_user;
+
+ALTER USER username WITH PASSWORD 'new_password';

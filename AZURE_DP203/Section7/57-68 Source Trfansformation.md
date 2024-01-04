@@ -33,4 +33,4 @@
 			- [ ] Column = choose column
 				- [ ] can be existing column or new one, choose new 'ecdc_year_week'
 				- [ ] expression = = year + -W' + (functions) lpad(week_of_year, 2, '0') (string to pad)
-- [ ] Aggregate Transformation
+- [ ] 
