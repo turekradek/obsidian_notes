@@ -135,6 +135,15 @@ To change the user in PostgreSQL, you can use the `SET ROLE` command. Here’s
 
 ## SQL SCRIPT
 
+# TO CHANGE TRANSACTION READ WRITE
+```
+BEGIN;
+SET TRANSACTION READ WRITE;
+CREATE GROUP groupcreateprod;
+COMMIT;
+
+```
+
 ```
 -- Create a new role
 CREATE ROLE groupname;
@@ -260,19 +269,25 @@ FROM
   FROM pg_roles 
   WHERE rolname = 'your_group_name';
 
+> SELECT g.rolname AS groupname, u.rolname AS username
+      FROM pg_auth_members m
+      JOIN pg_roles g ON (m.roleid = g.oid)
+       JOIN pg_roles u ON (m.member = u.oid);
 
-|Nr| Action | SQL CODE | notes |
-| - | - | - |
-| 1. |**Create a group** named ‘GROUPRADEK’: |CREATE ROLE GROUPRADEK NOLOGIN; | |
-|2. |**Give permissions to read and write data from tables**: | GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO GROUPRADEK; |
-|3. |**Give permissions to create databases and tables**: | GRANT CREATE ON DATABASE your_database TO GROUPRADEK; GRANT CREATE ON SCHEMA public TO GROUPRADEK; |
-|4. |**Give permissions to delete tables**: | GRANT DELETE ON ALL TABLES IN SCHEMA public TO GROUPRADEK;|
-|5. | **Give permissions to delete databases**:|ALTER ROLE GROUPRADEK CREATEDB; |
-|6. | **Give permissions to create new users**:| ALTER ROLE GROUPRADEK CREATEROLE; |
-|7. | **Add user ‘radek1’ to this group**: | GRANT GROUPRADEK TO radek1; |
-|8. | **Revoke the privilege of deleting databases**:| ALTER ROLE GROUPRADEK NOCREATEDB;|
-|9. | **Revoke the privilege of creating new users**:|ALTER ROLE GROUPRADEK NOCREATEROLE; |
-|10. | | |
+
+
+| Nr | Action | SQL CODE | notes |
+| ---- | ---- | ---- | ---- |
+| 1. | **Create a group** named ‘GROUPRADEK’: | CREATE ROLE GROUPRADEK NOLOGIN; |  |
+| 2. | **Give permissions to read and write data from tables**: | GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO GROUPRADEK; |  |
+| 3. | **Give permissions to create databases and tables**: | GRANT CREATE ON DATABASE your_database TO GROUPRADEK; GRANT CREATE ON SCHEMA public TO GROUPRADEK; |  |
+| 4. | **Give permissions to delete tables**: | GRANT DELETE ON ALL TABLES IN SCHEMA public TO GROUPRADEK; |  |
+| 5. | **Give permissions to delete databases**: | ALTER ROLE GROUPRADEK CREATEDB; |  |
+| 6. | **Give permissions to create new users**: | ALTER ROLE GROUPRADEK CREATEROLE; |  |
+| 7. | **Add user ‘radek1’ to this group**: | GRANT GROUPRADEK TO radek1; |  |
+| 8. | **Revoke the privilege of deleting databases**: | ALTER ROLE GROUPRADEK NOCREATEDB; |  |
+| 9. | **Revoke the privilege of creating new users**: | ALTER ROLE GROUPRADEK NOCREATEROLE; |  |
+| 10. |  |  |  |
 
 In PostgreSQL, a role can have the following attributes which you can use for a newly created group:
 
@@ -294,7 +309,91 @@ In PostgreSQL, a role can have the following attributes which you can use for a 
 You can set these attributes while creating a group (role) or alter them later using the `CREATE ROLE` and `ALTER ROLE` commands respectively.
 
 
+```
+SELECT 
+    t.table_name, 
+    pg_catalog.pg_get_userbyid(c.relowner) AS table_owner
+FROM 
+    information_schema.tables t
+JOIN 
+    pg_catalog.pg_class c ON (t.table_name = c.relname)
+WHERE 
+    t.table_schema = 'public';  -- change this to your schema name
+
+```
 
 
+[You can set up the privileges for your groups in PostgreSQL using the `GRANT` command](https://www.postgresql.org/docs/current/ddl-priv.html)[1](https://www.postgresql.org/docs/current/ddl-priv.html). Here’s how you can do it:
 
+1. **groupcreate**:
+    
+    SQL
+    
+    ```sql
+    GRANT SELECT, INSERT, UPDATE, CREATE ON ALL TABLES IN SCHEMA public TO groupcreate;
+    ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE, CREATE ON TABLES TO groupcreate;
+    ```
+    
+    AI-generated code. Review and use carefully. .
+    
+2. **groupwrite**:
+    
+    SQL
+    
+    ```sql
+    GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO groupwrite;
+    ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT, INSERT, UPDATE ON TABLES TO groupwrite;
+    ```
+    
+    AI-generated code. Review and use carefully. .
+    
+3. **groupread**:
+    
+    SQL
+    
+    ```sql
+    GRANT SELECT ON ALL TABLES IN SCHEMA public TO groupread;
+    ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO groupread;
+    ```
+    
+    AI-generated code. Review and use carefully. .
+    
 
+In these commands:
+
+- [`GRANT` is used to give privileges to a group](https://www.postgresql.org/docs/current/ddl-priv.html)[1](https://www.postgresql.org/docs/current/ddl-priv.html).
+- [`ALTER DEFAULT PRIVILEGES` is used to set the default privileges for new tables created in the future](https://www.postgresql.org/docs/current/ddl-priv.html)[1](https://www.postgresql.org/docs/current/ddl-priv.html).
+- `public` is the schema where your tables are located. [Replace it with your schema name if it’s different](https://www.postgresql.org/docs/current/ddl-priv.html)[1](https://www.postgresql.org/docs/current/ddl-priv.html).
+- [`ON ALL TABLES IN SCHEMA` applies the privileges to all existing tables in the schema](https://www.postgresql.org/docs/current/ddl-priv.html)[1](https://www.postgresql.org/docs/current/ddl-priv.html).
+- [`ON TABLES` in the `ALTER DEFAULT PRIVILEGES` command applies the privileges to all new tables created in the future](https://www.postgresql.org/docs/current/ddl-priv.html)[1](https://www.postgresql.org/docs/current/ddl-priv.html).
+
+Please note that you need to have the necessary permissions to execute these commands. If you encounter any issues, please contact your database administrator.
+
+[You can check the privileges for your groups in PostgreSQL by querying the `information_schema.role_table_grants` view](https://stackoverflow.com/questions/40759177/postgresql-show-all-the-privileges-for-a-concrete-user)[1](https://stackoverflow.com/questions/40759177/postgresql-show-all-the-privileges-for-a-concrete-user). Here’s an SQL command that will list all privileges for a specific group:
+
+SQL
+
+```sql
+SELECT * 
+FROM information_schema.role_table_grants 
+WHERE grantee = 'YOUR_GROUP';
+```
+
+# update indexes 
+```update_indexes
+-- Create a temporary sequence
+
+CREATE TEMP SEQUENCE temp_seq START WITH 1;
+
+-- Update the 'index' column with new values from the sequence
+
+UPDATE unavailable_sessions_xxx
+
+SET index = NEXTVAL('temp_seq')
+
+ORDER BY index;
+
+-- Reset the sequence
+
+SELECT SETVAL('temp_seq', 1);
+```

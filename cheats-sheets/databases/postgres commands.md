@@ -1,10 +1,10 @@
-|Short Description|Example|Notes|
-|---|---|---|
-|Create a table|CREATE TABLE customers (id SERIAL PRIMARY KEY, name VARCHAR(255), email VARCHAR(255));||
-|Insert data into a table|INSERT INTO customers (name, email) VALUES ('John Doe', 'johndoe@example.com');||
-|Select data from a table|SELECT * FROM customers;||
-|Update data in a table|UPDATE customers SET email = 'janedoe@example.com' WHERE id = 1;||
-|Delete data from a table|DELETE FROM customers WHERE id = 2;|
+| Short Description        | Example                                                                                | Notes |
+| ------------------------ | -------------------------------------------------------------------------------------- | ----- |
+| Create a table           | CREATE TABLE customers (id SERIAL PRIMARY KEY, name VARCHAR(255), email VARCHAR(255)); |       |
+| Insert data into a table | INSERT INTO customers (name, email) VALUES ('John Doe', 'johndoe@example.com');        |       |
+| Select data from a table | SELECT * FROM customers;                                                               |       |
+| Update data in a table   | UPDATE customers SET email = 'janedoe@example.com' WHERE id = 1;                       |       |
+| Delete data from a table | DELETE FROM customers WHERE id = 2;                                                    |       |
 
 
   
