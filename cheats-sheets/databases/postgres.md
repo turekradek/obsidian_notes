@@ -379,6 +379,11 @@ FROM information_schema.role_table_grants
 WHERE grantee = 'YOUR_GROUP';
 ```
 
+# change owner for table
+```sql
+ALTER TABLE your_table OWNER TO new_owner;
+```
+
 # update indexes 
 ```update_indexes
 -- Create a temporary sequence
@@ -387,13 +392,28 @@ CREATE TEMP SEQUENCE temp_seq START WITH 1;
 
 -- Update the 'index' column with new values from the sequence
 
-UPDATE unavailable_sessions_xxx
+UPDATE unavailable_sessions_xxx SET index = NEXTVAL('temp_seq');
 
-SET index = NEXTVAL('temp_seq')
-
-ORDER BY index;
+ORDER BY index; when added 
 
 -- Reset the sequence
 
 SELECT SETVAL('temp_seq', 1);
 ```
+CREATE TEMP SEQUENCE temp_sequence START WITH 1;
+-- update indexes
+
+UPDATE unavailable_sessions_xxx_test SET index = nextval('temp_sequence');
+
+select * from unavailable_sessions_xxx order by timestamp desc, path limit 10;
+
+CREATE TABLE unavailable_sessions_xxx_TEST AS  SELECT * FROM unavailable_sessions_xxx order by timestamp, path;
+
+# done 
+- [x] create table unavailable_sessions_xxx_test as select * from unavailable_sessions_xxx order by timestamp , index ; ✅ 2024-04-16
+- [x] create temp sequence temp_sequence start with 1; ✅ 2024-04-16
+- [x] update unavailable_sessions_xxx_test set index = nextval('temp_sequence'); ✅ 2024-04-16
+- [x] drop sequence temp_sequence; ✅ 2024-04-16
+
+# done one step
+- [x] WITH ordered AS (   SELECT *   FROM unavailable_sessions_xxx   ORDER BY timestamp, index ) UPDATE unavailable_sessions_xxx SET index = nextval('temp_sequence') ; ✅ 2024-04-16
