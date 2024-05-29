@@ -37,7 +37,7 @@ without scrolling.
 -   **`L`** – move to the bottom of the screen (L=low)
 
 
-## Inserting Text
+### Inserting Text
 -   **`i`** – switch to insert mode before the cursor
 -   **`I`** – insert text at the beginning of the line
 -   **`a`** – switch to insert mode after the cursor
@@ -46,7 +46,7 @@ without scrolling.
 -   **`O`** – open a new line above the current one
 -   **`ea`** – insert text at the end of the word
 -   **`Esc`** – exit insert mode; switch to command mode
-## Editing Text
+### Editing Text
 -   **`r`** – replace a single character (and return to command mode)
 -   **`cc`** – replace an entire line (deletes the line and moves into insert mode)
 -   **`C`** / **`c$`** – replace from the cursor to the end of a line
@@ -78,7 +78,7 @@ Some of them include:
 -   **`U`** – change the market text to uppercase
 
 
-## Search in File
+### Search in File
 -   **`*`** – jump to the next instance of the current word
 -   **`#`** – jump to previous instance of the current word
 -   **`/pattern`** – search forward for the specified pattern
