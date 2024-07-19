@@ -7,7 +7,7 @@
 Optimize-VHD -Path "C:\Users\rturek2\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc\LocalState\ext4.vhdx" -Mode Full
 ```
 
-#wsl #wsldisk
+#wsl #wsldisk #wsldisc
 # It works 
 
 PS C:\Windows\System32> wsl.exe --shutdown Ubuntu-22.04
